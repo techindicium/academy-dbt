@@ -1,4 +1,4 @@
-"billofmaterialsid","productassemblyid","componentid","startdate","enddate","unitmeasurecode","bomlevel","perassemblyqty","modifieddate"
+"billofmaterialsid","productassemblyid","componentid","startdate","enddate","unitmeasurecode","bomlevel",perassemblyqty,"modifieddate"
 893,,749,2010-05-26 00:00:00.000,,EA ,0,1.00,2010-05-12 00:00:00.000
 271,,750,2010-03-04 00:00:00.000,2010-05-03 00:00:00.000,EA ,0,1.00,2010-05-03 00:00:00.000
 34,,750,2010-05-04 00:00:00.000,,EA ,0,1.00,2010-04-20 00:00:00.000
