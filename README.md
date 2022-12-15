@@ -1,13 +1,23 @@
-Welcome to your new dbt project!
+# Indicium Academy
 
-### Using the starter project
+Repositório para ser utilizado no desafio para a obtenção da certificação de Analytics Engineer by Indicium. Faça o fork deste repositório e o utilize durante o desafio para fazer a insgestão das tabelas do SAP do Adventure Works.
 
-Try running the following commands:
-- dbt run
-- dbt test
+## Instruções
+
+Todas as tabelas do banco fonte do SAP da Adventure Works serão carregadas como seeds pelo dbt. Os arquivos .csv com os dados já estão na pasta de seeds.
+
+Para fazer o carregamento de todas as tabelas usem o comando:
+- `dbt seed`
+
+Para carregar uma tabela especifíca utilizem o comando
+- `dbt seed -s nome_do_csv`
+
+### Problemas comuns
+
+Em caso a linha de comando do dbt fique com o status de estar sempre carregando, ou, o job do comando `dbt seed` fique rodando indefinitivamente mesmo após as 64 tabelas forem carregadas você precisará reiniciar o terminal. Para isso, clique nos três pontos no canto inferior esquerdo ou no lado esquero da linha de comando e escolha a opção `Restart IDE`.
 
 
-### Resources:
+## Recursos:
 - Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
 - Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
 - Join the [dbt community](http://community.getbdt.com/) to learn from other analytics engineers
