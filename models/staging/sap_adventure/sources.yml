@@ -1,0 +1,38 @@
+version: 2
+
+sources:
+  - name: adw
+    description: This is the adventureworks erp postgres database replica
+    schema: sap_adw
+    tables:
+      - name: salesorderheader
+        description: one order per line
+        columns:
+          - name: salesorderid
+            description: salesorderheader primarykey
+            tests:
+              - unique
+              - not_null
+
+      - name: salesorderdetail
+        description: Line item detail for each order in the table saleorderheader.
+      - name: product
+        description: Table with products sold by Adventureworks.
+      - name: address
+        description: Table with Adresses Adventureworks.
+      - name: countryregion
+        description: Table with countrys in Adventureworks.
+      - name: creditcard
+        description: Table with information the customer creditcard for Adventureworks.
+      - name: customer
+        description: Table with information the customer for Adventureworks.
+      - name: person
+        description: Table with information the person and complement the customer for Adventureworks
+      - name: salesorderheadersalesreason
+        description: Table with information the customer for reason for buy in Adventureworks. 
+      - name: salesreason
+        description: Table with  complement information the salesorderheadersalesreason of the reason for buy in Adventureworks.
+      - name: stateprovince
+        description: Table with state customer for Adventureworks.
+      - name: store
+        description: Table with information complementary customer for Adventureworks.
