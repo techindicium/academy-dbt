@@ -35,7 +35,8 @@ models:
   dwadv: # <-- Name of the project. If you renamed your project you have to change this as well
     staging:
         sap_adventure:
-          +materialized: view
+          +materialized: table
+          +schema: sap_adw
 
 #marts:
   #dwadv:
