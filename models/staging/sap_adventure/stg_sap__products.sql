@@ -2,6 +2,8 @@ with
     source_product as (
         select
             cast(productid as int) id_product
+            , cast(productmodelid as int) id_productmodel
+            , cast(productsubcategoryid as int) as id_product_subcategory
             , cast(name as string) as name_product
             , cast(productnumber as string) as number_product
             , cast(makeflag as boolean) as makeflag
@@ -19,8 +21,6 @@ with
             , cast(productline as string) as productline			
             , cast(class as string) as class				
             , cast(style as string) as style				
-            , cast(productsubcategoryid as int) as id_product_subcategory		
-            , cast(productmodelid as int) id_productmodel	
             , cast(sellstartdate as TIMESTAMP) as start_selldate			
             , cast(sellenddate as TIMESTAMP) as end_selldate				
             , cast(rowguid as string) as rowguid			
