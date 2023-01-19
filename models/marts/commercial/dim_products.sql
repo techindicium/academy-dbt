@@ -30,12 +30,12 @@ with
         left join joined_tables_detail_head on products.id_product = joined_tables_detail_head.id_salesorderdetail
     )
 
-    --, transformed as (
-     --  select
-     --  row_number() over (order by products.id_product) as product_sk
-       *
-        --from joined_tables2
-   -- )
+   --, transformed as (
+    -- select
+    --   concat() over (order by products.id_product) as product_sk
+    --   ,*
+    --    from joined_tables2
+    --)
 
 select *
 from joined_tables2
