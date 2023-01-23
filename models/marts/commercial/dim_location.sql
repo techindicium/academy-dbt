@@ -1,6 +1,6 @@
 with salesorderheader as (
     select 
-        distinct(id_shiptoadress)
+        distinct(id_shiptoaddress)
     from {{ref('stg_sap__salesorderhead')}}
 )
 
@@ -35,7 +35,7 @@ with salesorderheader as (
         , countryregion.country_name
     
     from salesorderheader
-    left join address on salesorderheader.id_shiptoaddress = address.id_shiptoaddress
+    left join address on salesorderheader.id_shiptoaddress = address.id_address
     left join stateprovince on address.id_stateprovince = stateprovince.id_stateprovince
     left join countryregion on stateprovince.countryregioncode = countryregion.countryregioncode
 )

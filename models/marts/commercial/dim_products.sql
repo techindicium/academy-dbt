@@ -29,8 +29,8 @@ with
             , salesorderhead.id_customer
             , salesorderhead.id_salesperson
             , salesorderhead.id_territory
-            , salesorderhead.id_billtoadress
-            , salesorderhead.id_shiptoadress
+            , salesorderhead.id_billtoaddress
+            , salesorderhead.id_shiptoaddress
             , salesorderhead.id_shipmethod
             , salesorderhead.id_creditcard        
             , salesorderhead.revisionnumber
