@@ -39,7 +39,5 @@ with salesorderheader as (
     left join stateprovince on address.id_stateprovince = stateprovince.id_stateprovince
     left join countryregion on stateprovince.countryregioncode = countryregion.countryregioncode
 )
-
-
 select *
 from transformed
