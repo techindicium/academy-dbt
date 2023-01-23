@@ -18,6 +18,7 @@ with
     , joined_tables_detail_head as (
         select   
              salesorderdetail.id_salesorderdetail
+            , salesorderdetail.id_product
             , salesorderdetail.id_specialoffer
             , salesorderdetail.orderqty
             , salesorderdetail.unitprice
@@ -28,8 +29,8 @@ with
             , salesorderhead.id_customer
             , salesorderhead.id_salesperson
             , salesorderhead.id_territory
-            , salesorderhead.id_billtoadress
-            , salesorderhead.id_shiptoadress
+            , salesorderhead.id_billtoaddress
+            , salesorderhead.id_shiptoaddress
             , salesorderhead.id_shipmethod
             , salesorderhead.id_creditcard        
             , salesorderhead.revisionnumber
@@ -62,11 +63,12 @@ with
     )
 
    --, transformed as (
-    -- select
-    --   concat() over (order by products.id_product) as product_sk
-    --   ,*
-    --    from joined_tables2
-    --)
+   --  select
+   --    concat(id_product, id_salesorderdetail) as product_sk
+   --  , *
+   --    from joined_tables2
+   --
+   -- )
 
 select *
 from joined_tables2

@@ -6,6 +6,12 @@ with
             , cast(firstname as string) as firstname
             , cast(middlename as string) as middlename
             , cast(lastname as string) as lastname
+            , concat(ifnull(firstname, ' ') , ifnull(middlename, ' '), ifnull(lastname,' ')) as namefull
+            --,  case
+              --  when namefull is null
+              --  then store.storename
+               -- else person.fullname 
+               -- end as customer_namefull
             , cast(persontype as string) as persontype
             , cast(namestyle as string) as namestyle
             , cast(suffix as string) as suffix
