@@ -22,8 +22,18 @@ sources:
         description: Table with Adresses Adventureworks.
       - name: countryregion
         description: Table with countrys in Adventureworks.
+
       - name: creditcard
         description: Table with information the customer creditcard for Adventureworks.
+        columns:
+          - name: creditcardid
+            description: Primary key for the credit card source.
+            tests:
+              - unique
+              - not_null
+          
+
+
       - name: customer
         description: Table with information the customer for Adventureworks.
       - name: person
