@@ -5,35 +5,35 @@ sources:
     description: This is the adventureworks erp postgres database replica
     schema: sap_adw
     tables:
-      - name: sales_order_head
+      - name: salesorderhead
         description: one order per line
         columns:
-          - name: sales_order_id
+          - name: salesorderid
             description: salesorderheader primarykey
             tests:
               - unique
               - not_null
 
-      - name: sales_order_detail
+      - name: salesorderdetail
         description: Line item detail for each order in the table saleorderheader.
       - name: products
         description: Table with products sold by Adventureworks.
 
       - name: address
         description: Table with Adresses Adventureworks.
-      - name: country_region
+      - name: countryregion
         description: Table with countrys in Adventureworks.
 
-      - name: credit_card
+      - name: creditcard
         description: Table with information the customer creditcard for Adventureworks.
         columns:
-          - name: id_credit_card
+          - name: idcreditcard
             description: Primary key for the credit card source.
             tests:
               - unique
               - not_null
               
-      - name: sub_category
+      - name: productsubcategory
         description: Table with information complementary customer for Adventureworks.
       - name: category
         description: Table with information complementary customer for Adventureworks.
@@ -41,11 +41,11 @@ sources:
         description: Table with information the customer for Adventureworks.
       - name: person
         description: Table with information the person and complement the customer for Adventureworks
-      - name: sales_order_header_sales_reason
+      - name: salesorderheadersalesreason
         description: Table with information the customer for reason for buy in Adventureworks. 
-      - name: sales_reason
+      - name: salesreason
         description: Table with  complement information the salesorderheadersalesreason of the reason for buy in Adventureworks.
-      - name: state_province
+      - name: stateprovince
         description: Table with state customer for Adventureworks.
       - name: store
         description: Table with information complementary customer for Adventureworks.
