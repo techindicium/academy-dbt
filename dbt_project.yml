@@ -32,20 +32,18 @@ clean-targets:         # directories to be removed by `dbt clean`
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 models:
-  dwadv: # <-- Name of the project. If you renamed your project you have to change this as well
+  dwadv:
+    +materialized: table
     staging:
-        sap_adventure:
-          +materialized: table
-          +schema: sap_adw
+      sap_adventure:
+        +schema: stg_sap
 
-#marts:
-  #dwadv:
-    #sap_adventure:
-      #materialized: view
+    marts:
+      +schema: marts
       
 
 
 seeds:
-  dwadv: # <-- Name of the project. If you renamed your project you have to change this as well
+  dwadv:
     sap_adventure_works:
       +schema: sap_adw
