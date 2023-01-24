@@ -35,7 +35,7 @@ sources:
               
       - name: stg_sap__sub_category
         description: Table with information complementary customer for Adventureworks.
-      - name: stg_sap__sub_category
+      - name: stg_sap__category
         description: Table with information complementary customer for Adventureworks.
       - name: stg_sap__customer
         description: Table with information the customer for Adventureworks.
