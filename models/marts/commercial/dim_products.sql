@@ -48,12 +48,10 @@ with
             , stg_category.id_product_category
             , stg_category.name_category
             , stg_category.row_guid
-            , stg_category.modified_date
-            , stg_category.
-
+            , stg_category.modified_date  
         from stg_products
         left join stg_sub_category on
-            stg_products.id_product_sub_category" = stg_sub_category.id_product_category
+            stg_products.id_product_sub_category = stg_sub_category.id_product_category
         left join stg_category on
             stg_sub_category.id_product_category = stg_category.id_product_category
     )
