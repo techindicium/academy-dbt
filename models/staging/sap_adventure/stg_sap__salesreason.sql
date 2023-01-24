@@ -1,11 +1,11 @@
 with
-    source_salesreason as (
+    source_sales_reason as (
         select
-            cast(salesreasonid as int) as id_salesreason
+            cast(salesreasonid as int) as id_sales_reason
             , cast(name as string) as reason_name
-            , cast(reasontype as string) as reasontype
-            , cast(modifieddate as TIMESTAMP) as modifieddate
+            , cast(reasontype as string) as reason_type
+            , cast(left(cast(modifieddate as string), 10) as date) as modified_date
         from {{source('adw', 'salesreason' )}}
     )
-    select *
-    from source_salesreason
+select *
+from source_sales_reason

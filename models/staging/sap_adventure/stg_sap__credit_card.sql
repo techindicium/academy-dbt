@@ -6,7 +6,7 @@ with
             , cast(expyear as int) as expired_year
             , cast(expmonth as int) as expired_month
             , cast(cardnumber as int) as card_number
-            , cast(modifieddate as TIMESTAMP) as modified_date
+            , cast(left(cast(modifieddate as string), 10) as date) as modified_date
         from {{source('adw', 'creditcard' )}}
     )
 

@@ -7,5 +7,6 @@ with
             , cast(territoryid as string) as id_territory
         from {{source('adw', 'customer' )}}
     )
-    select *
-    from source_customer
+
+select *
+from source_customer

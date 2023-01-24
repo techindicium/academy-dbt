@@ -1,16 +1,16 @@
 with
-    source_salesorderdetail as (
+    source_sales_order_detail as (
         select
-            cast(salesorderid as int) as id_salesorder
+            cast(salesorderid as int) as id_sales_order
             , cast(productid as int) as id_product
-            , cast(salesorderdetailid as int) as id_salesorderdetail
-            , cast(specialofferid as int) as id_specialoffer
-            , cast(orderqty as int) as orderqty 
-            , cast(unitprice as int) as unitprice
-            , cast(unitpricediscount as int) as unitpricediscount
-            , cast(rowguid as string) as rowguid
-            , cast(modifieddate as TIMESTAMP) as modifieddate
+            , cast(salesorderdetailid as int) as id_sales_order_detail
+            , cast(specialofferid as int) as id_special_offer
+            , cast(orderqty as int) as order_qty 
+            , cast(unitprice as int) as unit_price
+            , cast(unitpricediscount as int) as unit_price_discount
+            , cast(rowguid as string) as row_guid
+            , cast(left(cast(modifieddate as string), 10) as date) as modified_date
         from {{source('adw', 'salesorderdetail' )}}
     )
-    select *
-    from source_salesorderdetail
+select *
+from source_sales_order_detail
