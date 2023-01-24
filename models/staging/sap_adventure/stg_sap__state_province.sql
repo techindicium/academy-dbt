@@ -1,5 +1,5 @@
 with
-    source_stateprovince as (
+    source_state_province as (
         select
             cast(stateprovinceid as int) as id_state_province
             , cast(territoryid as int) as id_territory
@@ -9,7 +9,7 @@ with
             , cast(countryregioncode as string) as country_region_code
             , cast(left(cast(modifieddate as string), 10) as date) as modified_date
             , cast(rowguid as string) as row_guid
-        from {{source('adw', 'stateprovince' )}}
+        from {{source('adw', 'stg_sap__state_province' )}}
     )
 select *
-from source_stateprovince
+from source_state_province

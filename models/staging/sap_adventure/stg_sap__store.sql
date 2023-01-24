@@ -5,7 +5,7 @@ with
             , cast(salespersonid as int) as id_sales_person
             , cast(name as string) as store_name
             , cast(left(cast(modifieddate as string), 10) as date) as modified_date
-        from {{ source('adw', 'store' ) }}
+        from {{ source('adw', 'stg_sap__store' ) }}
     )
 
 select *

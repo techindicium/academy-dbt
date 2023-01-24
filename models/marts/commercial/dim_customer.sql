@@ -1,5 +1,5 @@
 with 
-    customer as (
+    stg_sap__customer as (
         select 
             id_customer
             , id_person
@@ -17,13 +17,13 @@ with
 
     , joined_store_name as (
         select
-            customer.id_customer
-            , customer.id_person
-            , customer.id_store
-            , customer.id_territory
+            stg_sap__customer.id_stg_sap__customer
+            , stg_sap__customer.id_person
+            , stg_sap__customer.id_store
+            , stg_sap__customer.id_territory
             , store.store_name
-        from customer
-        left join store on customer.id_store = store.id_business_entity
+        from stg_sap__customer
+        left join store on stg_sap__customer.id_store = store.id_business_entity
     )
 
     , person as (

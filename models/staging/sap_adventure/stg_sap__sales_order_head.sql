@@ -26,7 +26,7 @@ with
             , cast(comment as string) as comment
             , cast(rowguid as string) as row_guid
             , cast(left(cast(modifieddate as string), 10) as date) as modified_date
-        from {{source('adw', 'salesorderheader' )}}
+        from {{source('adw', 'stg_sap__sales_order_head' )}}
     )
 select *
 from source_sales_order_header

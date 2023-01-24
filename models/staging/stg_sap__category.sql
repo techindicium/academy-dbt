@@ -5,7 +5,7 @@ with
             , cast(name as string) as name_category
             , cast(rowguid as string) as row_guid
             , cast(left(cast(modifieddate as string), 10) as date) as modified_date
-        from {{ source('adw', 'productcategory' ) }}
+        from {{ source('adw', 'stg_sap__category' ) }}
             
     )
 select *
