@@ -5,7 +5,7 @@ sources:
     description: This is the adventureworks erp postgres database replica
     schema: sap_adw
     tables:
-      - name: stg_sap__sales_order_head
+      - name: sales_order_head
         description: one order per line
         columns:
           - name: sales_order_id
@@ -14,17 +14,17 @@ sources:
               - unique
               - not_null
 
-      - name: stg_sap__sales_order_detail
+      - name: sales_order_detail
         description: Line item detail for each order in the table saleorderheader.
-      - name: stg_sap__products
+      - name: products
         description: Table with products sold by Adventureworks.
 
-      - name: stg_sap__address
+      - name: address
         description: Table with Adresses Adventureworks.
-      - name: stg_sap__country_region
+      - name: country_region
         description: Table with countrys in Adventureworks.
 
-      - name: stg_sap__credit_card
+      - name: credit_card
         description: Table with information the customer creditcard for Adventureworks.
         columns:
           - name: id_credit_card
@@ -33,20 +33,20 @@ sources:
               - unique
               - not_null
               
-      - name: stg_sap__sub_category
+      - name: sub_category
         description: Table with information complementary customer for Adventureworks.
-      - name: stg_sap__category
+      - name: category
         description: Table with information complementary customer for Adventureworks.
-      - name: stg_sap__customer
+      - name: customer
         description: Table with information the customer for Adventureworks.
-      - name: stg_sap__person
+      - name: person
         description: Table with information the person and complement the customer for Adventureworks
-      - name: stg_sap__sales_order_header_sales_reason
+      - name: sales_order_header_sales_reason
         description: Table with information the customer for reason for buy in Adventureworks. 
-      - name: stg_sap__sales_reason
+      - name: sales_reason
         description: Table with  complement information the salesorderheadersalesreason of the reason for buy in Adventureworks.
-      - name: stg_sap__state_province
+      - name: state_province
         description: Table with state customer for Adventureworks.
-      - name: stg_sap__store
+      - name: store
         description: Table with information complementary customer for Adventureworks.
       
