@@ -5,7 +5,7 @@ with
             , cast(name as string) as reason_name
             , cast(reasontype as string) as reason_type
             , cast(left(cast(modifieddate as string), 10) as date) as modified_date
-        from {{source('adw', 'stg_sap__sales_reason' )}}
+        from {{source('adw', 'salesreason' )}}
     )
 select *
 from source_sales_reason

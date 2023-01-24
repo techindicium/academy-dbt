@@ -10,7 +10,7 @@ with
             , cast(unitpricediscount as int) as unit_price_discount
             , cast(rowguid as string) as row_guid
             , cast(left(cast(modifieddate as string), 10) as date) as modified_date
-        from {{source('adw', 'stg_sap__sales_order_detail' )}}
+        from {{source('adw', 'salesorderdetail' )}}
     )
 select *
 from source_sales_order_detail
