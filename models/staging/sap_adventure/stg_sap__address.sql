@@ -9,7 +9,7 @@ with
             , cast(postalcode as string) as postal_code
             , cast(spatiallocation as string) as spatial_location
             , cast(left(cast(modifieddate as string), 10) as date) as modified_date
-        from {{ source('adw', 'address' ) }}
+        from {{ source('adw', 'stg_sap__address' ) }}
     )
 select *
 from source_address

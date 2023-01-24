@@ -5,7 +5,7 @@ with
             , cast(personid as int) as id_person
             , cast(storeid as int) as id_store
             , cast(territoryid as string) as id_territory
-        from {{source('adw', 'customer' )}}
+        from {{source('adw', 'stg_sap__customer' )}}
     )
 
 select *

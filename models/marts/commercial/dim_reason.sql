@@ -1,19 +1,19 @@
 with 
     , stg_sales_reason as (
         select 
-            id_salesreason
+            id_sales_reason
             , reason_name
-            , reasontype
-            , modifieddate
-        from {{ ref('stg_sap__salesorderheadersalesreason') }}
+            , reason_type
+            , modified_date
+        from {{ ref('stg_sap__sales_order_header_sales_reason') }}
     )
 
     , transformed as (
         select
-            id_salesreason as pk_sales_reason
+            id_sales_reason as pk_sales_reason
             , reason_name
-            , reasontype
-            , modifieddate
+            , reason_type
+            , modified_date
         from stg_sales_reason
     )
 
