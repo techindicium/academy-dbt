@@ -16,7 +16,7 @@ sources:
 
       - name: salesorderdetail
         description: Line item detail for each order in the table saleorderheader.
-      - name: products
+      - name: product
         description: Table with products sold by Adventureworks.
 
       - name: address
@@ -35,7 +35,7 @@ sources:
               
       - name: productsubcategory
         description: Table with information complementary customer for Adventureworks.
-      - name: category
+      - name: productcategory
         description: Table with information complementary customer for Adventureworks.
       - name: customer
         description: Table with information the customer for Adventureworks.
