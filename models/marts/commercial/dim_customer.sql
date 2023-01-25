@@ -17,7 +17,7 @@ with
 
     , joined_store_name as (
         select
-            stg_sap__customer.id_stg_sap__customer
+            stg_sap__customer.id_customer
             , stg_sap__customer.id_person
             , stg_sap__customer.id_store
             , stg_sap__customer.id_territory
@@ -30,7 +30,7 @@ with
         select
             id_business_entity
             , title
-            , namefull
+            , full_name
         from {{ref('stg_sap__person')}}
     )
 
@@ -42,7 +42,7 @@ with
             , joined_store_name.id_territory
             , joined_store_name.store_name
             , person.title
-            , person.namefull
+            , person.full_name
         from joined_store_name
         left join person on joined_store_name.id_person = person.id_business_entity
     )

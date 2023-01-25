@@ -1,7 +1,7 @@
 with salesorderheader as (
     select 
-        distinct(id_shiptoaddress)
-    from {{ref('stg_sap__sales_order_head')}}
+       distinct( id_ship_to_address )
+    from {{ref('salesorderheader')}}
 )
 
 , address as (
@@ -22,22 +22,21 @@ with salesorderheader as (
 , countryregion as (
     select
     *,
-
     from {{ref('stg_sap__country_region')}}
 )
 
 , transformed as (
     select 
-        row_number() over (order by sales_order_header.id_ship_to_address) as location_sk
-        , sales_order_header.id_ship_to_address
+        row_number() over (order by salesorderheader.ship_to_address_id) as location_sk
+        , salesorderheader.ship_to_address_id
         , address.city as city_name
-        , state_province.state_name
-        , country_region.country_name
+        , stateprovince.state_name
+        , countryregion.country_name
     
-    from sales_order_header
-    left join address on sales_order_header.id_ship_to_address = address.id_address
-    left join state_province on address.id_stateprovince = stateprovince.id_stateprovince
-    left join country_region on state_province.country_region_code = country_region.country_region_code
+    from salesorderheader
+    left join address on salesorderheader.shiptoaddressid = address.addressid
+    left join stateprovince on address.stateprovinceid = stateprovince.stateprovinceid
+    left join countryregion on stateprovince.countryregioncode = countryregion.countryregioncode
 )
 select *
 from transformed

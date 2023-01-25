@@ -25,7 +25,7 @@ with
             , cast(left(cast(sellenddate as string), 10) as date) as end_sell_date				
             , cast(rowguid as string) as row_guid			
             , cast(left(cast(modifieddate as string), 10) as date) as modified_date
-        from {{source('adw', 'products' )}}
+        from {{source('adw', 'product' )}}
     )
 select *
 from source_product
