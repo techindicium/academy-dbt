@@ -57,4 +57,4 @@ with
     )
 
 select *
-from stg_products
+from joined_tables

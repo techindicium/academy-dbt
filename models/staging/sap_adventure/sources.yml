@@ -5,7 +5,7 @@ sources:
     description: This is the adventureworks erp postgres database replica
     schema: sap_adw
     tables:
-      - name: salesorderhead
+      - name: salesorderheader
         description: one order per line
         columns:
           - name: salesorderid
