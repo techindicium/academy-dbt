@@ -14,7 +14,6 @@ with
             , cast(vacationhours as int) as vacation_hours
             , cast(rowguid as string) as row_guid	
             , cast(left(cast(modifieddate as string), 10) as date) as modified_date
-            ,cast(organizationnode as string) as organizati_on_node
         from {{ source('adw', 'employee' ) }}
     )
 
