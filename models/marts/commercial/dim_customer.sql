@@ -1,5 +1,5 @@
 with 
-    stg_sap__customer as (
+    stg_customer as (
         select 
             id_customer
             , id_person
@@ -8,7 +8,7 @@ with
         from {{ref('stg_sap__customer')}}
     )
 
-    , store as (
+    , stg_store as (
         select 
             id_business_entity
             , store_name
@@ -17,16 +17,16 @@ with
 
     , joined_store_name as (
         select
-            stg_sap__customer.id_customer
-            , stg_sap__customer.id_person
-            , stg_sap__customer.id_store
-            , stg_sap__customer.id_territory
-            , store.store_name
-        from stg_sap__customer
-        left join store on stg_sap__customer.id_store = store.id_business_entity
+            stg_customer.id_customer
+            , stg_customer.id_person
+            , stg_customer.id_store
+            , stg_customer.id_territory
+            , stg_store.store_name
+        from stg_customer
+        left join stg_store on stg_customer.id_store = stg_store.id_business_entity
     )
 
-    , person as (
+    , stg_person as (
         select
             id_business_entity
             , title
@@ -41,10 +41,10 @@ with
             , joined_store_name.id_store
             , joined_store_name.id_territory
             , joined_store_name.store_name
-            , person.title
-            , person.full_name
+            , stg_person.title
+            , stg_person.full_name
         from joined_store_name
-        left join person on joined_store_name.id_person = person.id_business_entity
+        left join stg_person on joined_store_name.id_person = stg_person.id_business_entity
     )
 
 select *
