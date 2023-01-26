@@ -1,7 +1,7 @@
 with
     source_employee as (
         select
-            cast( businessentityid as int) as id_business_entity_
+            cast(businessentityid as int) as id_business_entity_
             , cast(nationalidnumber as string) as id_nacionalnumber
             , cast(birthdate as date) as birthdate
             , cast(maritalstatus as string) as marital_status
