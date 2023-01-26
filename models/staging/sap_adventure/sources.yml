@@ -39,6 +39,8 @@ sources:
         description: Table with information complementary customer for Adventureworks.
       - name: customer
         description: Table with information the customer for Adventureworks.
+      - name: employee
+        description: Table with information the employee for Adventureworks.
       - name: person
         description: Table with information the person and complement the customer for Adventureworks
       - name: salesorderheadersalesreason
