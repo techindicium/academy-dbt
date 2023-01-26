@@ -5,7 +5,7 @@ with
             , reason_name
             , reason_type
             , modified_date
-        from {{ ref('salesorderheadersalesreason') }}
+        from {{ ref('stg_sap__sales_reason') }}
     )
 
     , transformed as (
