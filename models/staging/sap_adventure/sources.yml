@@ -51,4 +51,5 @@ sources:
         description: Table with state customer for Adventureworks.
       - name: store
         description: Table with information complementary customer for Adventureworks.
-      
+      - name: productvendor
+        description: Table with information complementary seller for Adventureworks.
