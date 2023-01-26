@@ -54,4 +54,6 @@ sources:
       - name: productvendor
         description: Table with information complementary seller for Adventureworks.
       - name: vendor
-        description: Table with information complementary vendor for Adventureworks.
+        description: Table with information complementary seller for Adventureworks.
+      - name: salesterritory
+        description: Table with information territoritoy seller for Adventureworks.
