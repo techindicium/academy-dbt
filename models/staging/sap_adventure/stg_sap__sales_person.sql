@@ -2,7 +2,7 @@ with
     source_sales_person as (
         select
             cast(businessentityid as int) as id_business_entity
-            , cast(territoryid as string) as id_territory
+            , cast(territoryid as int) as id_territory
             , cast(salesquota as int) as sales_quota
             , cast(bonus as int) as bonus
             , cast(commissionpct as int) as commission_pct

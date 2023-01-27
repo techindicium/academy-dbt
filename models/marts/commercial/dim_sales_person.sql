@@ -33,6 +33,11 @@ with
         from {{ref('stg_sap__sales_person')}}
     )
 
+    , stg_sales_territory as (
+        select *
+        from {{ref('stg_sap__sales_territory')}}
+    )
+
     , joined_person_employee as (
         select
             stg_employee.id_business_entity
@@ -78,9 +83,41 @@ with
             , joined_person_employee.vacation_hours
             , joined_person_employee.gender
 
-        from joined_person_employee
-        left join stg_sales_person on joined_person_employee.id_business_entity = stg_sales_person.id_business_entity
+        from stg_sales_person
+        left join joined_person_employee on stg_sales_person.id_business_entity = joined_person_employee.id_business_entity
     )
 
+    , joined_employee_and_sales_person_and_sales_territory  as (
+        select
+            stg_sales_person.id_business_entity
+            , stg_sales_person.sales_quota
+            , stg_sales_person.bonus
+            , stg_sales_person.commission_pct
+            , stg_sales_person.sales_ytd
+            , stg_sales_person.row_guid
+            , stg_sales_person.modified_date
+            , joined_person_employee.id_nacional_number
+            , joined_person_employee.first_name
+            , joined_person_employee.last_name
+            , joined_person_employee.full_name
+            , joined_person_employee.person_type
+            , joined_person_employee.birth_date
+            , joined_person_employee.hire_date
+            , joined_person_employee.salaried_flag
+            , joined_person_employee.sick_leave_hours
+            , joined_person_employee.current_flag
+            , joined_person_employee.vacation_hours
+            , joined_person_employee.gender
+            , stg_sales_territory.id_territory
+            , stg_sales_territory.name_territory
+            , stg_sales_territory.country_region_code
+            , stg_sales_territory.group_territory
+            , stg_sales_territory.sale_sytd
+            , stg_sales_territory.sales_last_year
+            , stg_sales_territory.cost_ytd
+            , stg_sales_territory.cost_last_year
+        from stg_sales_territory
+        left join joined_employee_and_sales_person on stg_sales_territory.id_territory = joined_employee_and_sales_person.id_territory
+    )
 select *
-from joined_employee_and_sales_person
+from joined_employee_and_sales_person_and_sales_territory
