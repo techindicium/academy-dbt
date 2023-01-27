@@ -41,7 +41,7 @@ with
             , stg_person.last_name
             , stg_person.full_name
             , stg_person.person_type
-            , stg_employee.birthdate
+            , stg_employee.birth_date
             , stg_employee.hire_date
             , stg_employee.salaried_flag
             , stg_employee.sick_leave_hours
@@ -70,7 +70,7 @@ with
             , joined_person_employee.last_name
             , joined_person_employee.full_name
             , joined_person_employee.person_type
-            , joined_person_employeebirthdate
+            , joined_person_employee.birth_date
             , joined_person_employee.hire_date
             , joined_person_employee.salaried_flag
             , joined_person_employee.sick_leave_hours
