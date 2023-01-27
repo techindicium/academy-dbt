@@ -3,7 +3,7 @@ with
         select
             cast(businessentityid as int) as id_business_entity
             , cast(nationalidnumber as string) as id_nacional_number
-            , cast(birthdate as date) as birthdate
+            , cast(birthdate as date) as birth_date
             , cast(maritalstatus as string) as marital_status
             , cast(gender as string) as gender
             , cast(hiredate as date) as hire_date
