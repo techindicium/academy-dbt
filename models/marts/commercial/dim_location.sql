@@ -22,7 +22,6 @@ with
     , joined_tables as (
     select 
          stg_address.id_address
-         , stg_address.id_state_province
          , stg_address.city
          , stg_address.address_line_1
          , stg_address.address_line_2
@@ -35,11 +34,8 @@ with
          , stg_state_province.is_only_state_province_flag
          , stg_state_province.state_province_code
          , stg_state_province.country_region_code
-         , stg_state_province.modified_date
          , stg_state_province.row_guid
-         , stg_country_region.country_region_code
          , stg_country_region.country_name
-         , stg_country_region.modified_date
                 
         from stg_state_province
         left join stg_country_region 
