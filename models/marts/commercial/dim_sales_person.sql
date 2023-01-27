@@ -14,7 +14,7 @@ with
         select 
             id_business_entity
             , id_nacional_number
-            , birthdate
+            , birth_date
             , marital_status
             , hire_date
             , salaried_flag
