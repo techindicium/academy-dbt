@@ -1,14 +1,13 @@
 with
     source_employee as (
         select
-            cast( businessentityid as int) as id_business_entity_
-            , cast(nationalidnumber as string) as id_nacionalnumber
+            cast(businessentityid as int) as id_business_entity
+            , cast(nationalidnumber as string) as id_nacional_number
             , cast(birthdate as date) as birthdate
             , cast(maritalstatus as string) as marital_status
             , cast(gender as string) as gender
             , cast(hiredate as date) as hire_date
             , cast(salariedflag as boolean) as salaried_flag
-            , cast(vacationhours as int) as vacation_hours
             , cast(sickleavehours as int) as sick_leave_hours
             , cast(currentflag as int) as current_flag
             , cast(vacationhours as int) as vacation_hours

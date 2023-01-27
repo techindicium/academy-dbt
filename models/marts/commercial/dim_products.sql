@@ -18,7 +18,6 @@ with
         select
             stg_products.id_product 
             , stg_products.id_product_model 
-            , stg_products.id_product_sub_category
             , stg_products.name_product
             , stg_products.number_product
             , stg_products.make_flag
@@ -43,12 +42,7 @@ with
             , stg_sub_category.id_product_sub_category
             , stg_sub_category.id_product_category
             , stg_sub_category.name_sub_category
-            , stg_sub_category.row_guid
-            , stg_sub_category.modified_date
-            , stg_category.id_product_category
             , stg_category.name_category
-            , stg_category.row_guid
-            , stg_category.modified_date  
         from stg_products
         left join stg_sub_category on
             stg_products.id_product_sub_category = stg_sub_category.id_product_category
