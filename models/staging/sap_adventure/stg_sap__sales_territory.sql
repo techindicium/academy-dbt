@@ -1,7 +1,7 @@
 with
     source_sales_territory as (
         select
-        cast(territoryid as int) as id_territory
+            cast(territoryid as int) as id_territory
             , cast(name as string) as name_territory
             , cast(countryregioncode as string) as country_region_code
             , cast('group' as string) as group_territory
