@@ -33,6 +33,11 @@ with
         from {{ref('stg_sap__sales_person')}}
     )
 
+    , stg_sales_territory as (
+        select *
+        from {{ref('stg_sap__sales_territory')}}
+    )
+
     , joined_person_employee as (
         select
             stg_employee.id_business_entity
@@ -78,9 +83,10 @@ with
             , joined_person_employee.vacation_hours
             , joined_person_employee.gender
 
-        from joined_person_employee
-        left join stg_sales_person on joined_person_employee.id_business_entity = stg_sales_person.id_business_entity
+        from stg_sales_person
+        left join joined_person_employee on stg_sales_person.id_business_entity = joined_person_employee.id_business_entity
+    
     )
-
+    
 select *
 from joined_employee_and_sales_person
