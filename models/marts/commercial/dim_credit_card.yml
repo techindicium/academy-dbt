@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: dim_credit_cards
+    columns:
+      - name: pk_credit_card
+        description: The pk_credit_card of the primary key
+        tests:
+          - not_null   
+          - unique
