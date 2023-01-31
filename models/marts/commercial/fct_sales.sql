@@ -227,9 +227,9 @@ with
     
     , transformed as (
         select *
-        , unit_price * order_qty as gross_total_amount
-        , (1-unit_price_discount)* unit_price * order_qty as net_value
-
+            , unit_price * order_qty as gross_total_amount
+            , (1-unit_price_discount)* unit_price * order_qty as net_value
+        from joined
     )
 select *
 from transformed
