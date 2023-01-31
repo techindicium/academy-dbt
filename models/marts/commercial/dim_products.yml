@@ -1,0 +1,62 @@
+version: 2
+
+models:
+  - name: dim_products
+    columns:
+      - name: id_product 
+        description: The id_customer the primary key
+        tests:
+          - not_null   
+          - unique
+      - name: id_product_model 
+        describle: The ID model product
+      - name: name_product
+        describle: The name product
+      - name: number_product
+        describle: The number of product
+      - name: make_flag
+        describle: The flag product made
+      - name: finished_goods_flag
+        describle: Flag that product has been finished
+      - name: color
+        describle: The color que product
+      - name: safety_stock_level
+        describle: The level stock safety
+      - name: reorder_point
+        describle: The stock point
+      - name: standard_cost
+        describle: The cost standard
+      - name: price_list
+        describle: The list price
+      - name: number_size
+        describle: The number size
+      - name: unit_mesure
+        describle: The unit mesure
+      - name: weigh_unit_mensure
+        describle: The unit mesure weigh
+      - name: weight
+        describle: The weigh
+      - name: days_to_manufacture
+        describle: The days to manufacture
+      - name: product_line
+        describle: The product line
+      - name: class
+        describle: The class product
+      - name: style
+        describle: The style of product
+      - name: start_sell_date
+        describle: The start of the sale date
+      - name: end_sell_date
+        describle: The end of the sale date
+      - name: row_guid
+        describle: the row guid
+      - name: modified_date
+        describle: The date of the modified date
+      - name: id_product_sub_category
+        describle: The Id of  sub category of product
+      - name: id_product_category
+        describle: The Id of category of product
+      - name: name_sub_category
+        describle: The name of sub category
+      - name: name_category
+        describle: The name of category
