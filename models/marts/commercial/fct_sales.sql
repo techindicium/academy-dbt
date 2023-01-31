@@ -28,7 +28,13 @@ with
     )
 
     , credit_card as (
-        select *
+        select
+            id_credit_card
+            , card_type
+            , expired_year
+            , expired_month
+            , card_number
+            , modified_date
         from {{ ref('dim_credit_card') }}
     )
 
@@ -116,46 +122,45 @@ with
 
     , joined as (
         select 
-            order_head.id_sales_order
-            , order_head.id_sales_person
-            , order_head.id_ship_to_address
-            , order_head.id_ship_method
-            , order_head.id_currency_rate
-            , order_detail.id_sales_order_detail
-            , order_detail.id_special_offer
+            joined_order_details.id_sales_order
+            , joined_order_details.id_sales_person
+            , joined_order_details.id_ship_to_address
+            , joined_order_details.id_ship_method
+            , joined_order_details.id_currency_rate
+            , joined_order_details.id_sales_order_detail
+            , joined_order_details.id_special_offer
             , reason.id_sales_reason
             , person.id_business_entity
             , person.id_nacional_number
             , products.id_product_sub_category
             , products.id_product_category
-            , location_id_address
-            , location_id_state_province
-            , location_id_territory
+            , location.id_address
+            , location.id_state_province
+            , location.id_territory
             , customer.id_customer
             , customer.id_person
             , customer.id_store
             , products.id_product
             , products.id_product_model
             , credit_card.id_credit_card
-            , order_detail.order_qty
-            , order_detail.unit_price
-            , order_detail.unit_price_discount
-            , order_head.sub_total
-            , order_head.purchase_order_number
-            , order_head.revision_number
-            , order_head.taxamt
-            , order_head.freight
-            , order_head.total_due
-            , order_head.status
-            , order_head.online_order_flag
-            , order_head.order_date
-            , order_head.due_date
-            , order_head.ship_date
-            , order_head.account_number
-            , order_head.creditcar_dappoval_code
-            , order_head.comment
-            , order_head.row_guid
-            , order_head.modified_date
+            , joined_order_details.order_qty
+            , joined_order_details.unit_price
+            , joined_order_details.unit_price_discount
+            , joined_order_details.sub_total
+            , joined_order_details.purchase_order_number
+            , joined_order_details.revision_number
+            , joined_order_details.taxamt
+            , joined_order_details.freight
+            , joined_order_details.total_due
+            , joined_order_details.status
+            , joined_order_details.online_order_flag
+            , joined_order_details.order_date
+            , joined_order_details.due_date
+            , joined_order_details.ship_date
+            , joined_order_details.account_number
+            , joined_order_details.creditcar_dappoval_code
+            , joined_order_details.comment
+            , joined_order_details.modified_date
             , person.sales_quota
             , person.bonus
             , person.commission_pct
@@ -173,7 +178,6 @@ with
             , person.current_flag
             , person.vacation_hours
             , person.gender
-            , reason.modified_date
             , reason.reason_name
             , reason.reason_type
             , products.name_product
@@ -197,16 +201,15 @@ with
             , products.end_sell_date
             , products.name_sub_category
             , products.name_category
-            , location_city
-            , location_address_line_1
-            , location_postal_code
-            , location_spatial_location
-            , location_state_name
-            , location_is_only_state_province_flag
-            , location_state_province_code
-            , location_country_region_code
-            , location_row_guid
-            , location_country_name
+            , location.city
+            , location.address_line_1
+            , location.postal_code
+            , location.spatial_location
+            , location.state_name
+            , location.is_only_state_province_flag
+            , location.state_province_code
+            , location.country_region_code
+            , location.country_name
             , customer.store_name
             , customer.title
             , credit_card.card_type

@@ -7,7 +7,7 @@ with
  
     , transformed as (
         select 
-            id_credit_card as id_credit_card
+            id_credit_card
             , card_type
             , expired_year
             , expired_month
