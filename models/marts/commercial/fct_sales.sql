@@ -231,5 +231,5 @@ with
         , (1-unit_price_discount)* unit_price * order_qty as net_value
 
     )
-select*
+select *
 from transformed
