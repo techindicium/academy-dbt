@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: dim_sales_person
+    columns:
+      - name: id_business_entity
+        description: The primary key
+        tests:
+          - not_null   
+          - unique    
+      - name: id_territory
+        description:
+      - name: name_territory
+        description:
+      - name: country_region_code
+        description:
+      - name: group_territory
+        description:
+      - name: sale_sytd
+        description:
+      - name: cost_ytd
+        description:
+      - name: cost_last_year
+        description:
+      - name: row_guid
+        description:
+      - name: modified_date
+        description:

@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: dim_sales_person
+    columns:
+      - name: id_business_entity
+        description: The primary key
+        tests:
+          - not_null   
+          - unique
+      - name: id_territory
+        description: The ID territory is foreigner key 
+      - name: sales_quota
+        description: The quota of sales
+      - name: bonus
+        description: The bonus 
+      - name: commission_pct
+        description: The commission
+      - name: sales_ytd
+        description: The sales from the beginning of the year until today
+      - name: sales_last_year
+        description: The sales last year
+      - name: row_guid
+        description: the row guid
+      - name: modified_date
+        description: The modified_date
+      - name: id_nacional_number
+        description: The number Id nacional sales
+      - name: first_name
+        description: The first name
+      - name: last_name
+        description: The last name
+      - name: full_name
+        description: The full name
+      - name: person_type
+        description: The type person
+      - name: birth_date
+        description: The birth date
+      - name: hire_date
+        description: The hire date
+      - name: salaried_flag
+        description: The salaried flag
+      - name: sick_leave_hours
+        description: The sick leave hours
+      - name: current_flag
+        description: The current flag 
+      - name: vacation_hours
+        description: The vacation hours
+      - name: gender
+        description: The gender
