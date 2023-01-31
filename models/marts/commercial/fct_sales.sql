@@ -123,7 +123,6 @@ with
     , joined as (
         select 
             joined_order_details.id_sales_order
-            , joined_order_details.id_sales_person
             , joined_order_details.id_ship_to_address
             , joined_order_details.id_ship_method
             , joined_order_details.id_currency_rate
@@ -218,7 +217,7 @@ with
             
         from joined_order_details
         left join territory on joined_order_details.id_territory = territory.id_territory
-        left join person on joined_order_details.row_guid = person.row_guid
+        left join person on joined_order_details.id_territory = person.id_territory
         left join reason on joined_order_details.id_sales_order = reason.id_sales_order
         left join products on joined_order_details.id_product = products.id_product
         left join location on joined_order_details.id_territory = location.id_territory
