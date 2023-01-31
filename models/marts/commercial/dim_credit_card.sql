@@ -4,10 +4,10 @@ with
         from {{ ref('stg_sap__credit_card') }}
     )
 
-    /* Definindo primary da dim_credit_card. */
+ 
     , transformed as (
         select 
-            id_credit_card as pk_credit_card
+            id_credit_card as id_credit_card
             , card_type
             , expired_year
             , expired_month

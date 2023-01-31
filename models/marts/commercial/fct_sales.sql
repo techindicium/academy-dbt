@@ -8,12 +8,7 @@ with
         from {{ ref('dim_sales_person') }}
     )
     , reason as (
-        select
-            id_sales_order
-           , id_sales_reason
-           , modified_date
-           , reason_name
-           , reason_type
+        select *
         from {{ ref('dim_reason') }}
     )
     
@@ -125,10 +120,23 @@ with
             , order_head.id_sales_person
             , order_head.id_ship_to_address
             , order_head.id_ship_method
-            , order_head.id_credit_card
             , order_head.id_currency_rate
             , order_detail.id_sales_order_detail
             , order_detail.id_special_offer
+            , reason.id_sales_reason
+            , person.id_business_entity
+            , person.id_nacional_number
+            , products.id_product_sub_category
+            , products.id_product_category
+            , location_id_address
+            , location_id_state_province
+            , location_id_territory
+            , customer.id_customer
+            , customer.id_person
+            , customer.id_store
+            , products.id_product
+            , products.id_product_model
+            , credit_card.id_credit_card
             , order_detail.order_qty
             , order_detail.unit_price
             , order_detail.unit_price_discount
@@ -148,14 +156,12 @@ with
             , order_head.comment
             , order_head.row_guid
             , order_head.modified_date
-            , person.id_business_entity
             , person.sales_quota
             , person.bonus
             , person.commission_pct
             , person.sales_ytd
             , person.sales_last_year
             , person.row_guid
-            , person.id_nacional_number
             , person.first_name
             , person.last_name
             , person.full_name
@@ -167,12 +173,9 @@ with
             , person.current_flag
             , person.vacation_hours
             , person.gender
-            , reason.id_sales_reason
             , reason.modified_date
             , reason.reason_name
             , reason.reason_type
-            , products.id_product
-            , products.id_product_model
             , products.name_product
             , products.number_product
             , products.make_flag
@@ -192,42 +195,32 @@ with
             , products.style
             , products.start_sell_date
             , products.end_sell_date
-            , products.id_product_sub_category
-            , products.id_product_category
             , products.name_sub_category
             , products.name_category
-            , location_id_address
             , location_city
             , location_address_line_1
             , location_postal_code
             , location_spatial_location
-            , location_id_state_province
-            , location_id_territory
             , location_state_name
             , location_is_only_state_province_flag
             , location_state_province_code
             , location_country_region_code
             , location_row_guid
             , location_country_name
-            , customer.id_customer
-            , customer.id_person
-            , customer.id_store
             , customer.store_name
             , customer.title
-            , credit_card.pk_credit_card
             , credit_card.card_type
             , credit_card.expired_year
             , credit_card.expired_month
-
             
         from joined_order_details
         left join territory on joined_order_details.id_territory = territory.id_territory
         left join person on joined_order_details.row_guid = person.row_guid
         left join reason on joined_order_details.id_sales_order = reason.id_sales_order
         left join products on joined_order_details.id_product = products.id_product
-        left join location on joined_order_details.id_address = location.id_address
+        left join location on joined_order_details.id_territory = location.id_territory
         left join customer on joined_order_details.id_customer = customer.id_customer
-        left join credit_card  on joined_order_details.pk_credit_card = credit_card.pk_credit_card
+        left join credit_card  on joined_order_details.id_credit_card = credit_card.id_credit_card
     )
 
 select*

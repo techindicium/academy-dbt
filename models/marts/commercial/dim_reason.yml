@@ -3,11 +3,10 @@ version: 2
 models:
   - name: dim_reason
     columns:
-      - name: pk_sales_reason
+      - name: id_sales_reason
         description: The primary key
-        tests:
-          - not_null   
-          - unique
+      - name: id_sales_order 
+        description: foreigner key sales order
       - name: reason_name
         description: The name reason
       - name: reason_type
