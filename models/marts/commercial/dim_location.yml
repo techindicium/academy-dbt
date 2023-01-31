@@ -1,0 +1,48 @@
+         version: 2
+
+models:
+  - name: dim_location
+    columns:
+      - name: id_address
+        description: The id_address the primary key
+        tests:
+          - not_null   
+          - unique
+      - name: city
+        description: The name of city
+      - name: address_line_1
+        description: Adress part 1
+      - name:  address_line_2
+        description: adress part 2
+      - name: postal_code
+        description: The postal code
+      - name: spatial_location
+        description: longitude and latitude of the location
+      - name: modified_date
+        description: The last modidied date
+      - name: id_state_province
+        description: Number Id state 
+      - name: id_territory
+        description: Id territory
+      - name: state_name
+        description: The name state
+      - name: is_only_state_province_flag
+        description: The flag 1 state name customer
+      - name: state_province_code
+        description: The code of province
+      - name: country_region_code
+        description: The code country region
+      - name: row_guid
+        description: The row guil
+      - name: country_name
+        description: The country name  
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
