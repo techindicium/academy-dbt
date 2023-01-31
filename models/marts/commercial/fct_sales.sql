@@ -224,6 +224,12 @@ with
         left join customer on joined_order_details.id_customer = customer.id_customer
         left join credit_card  on joined_order_details.id_credit_card = credit_card.id_credit_card
     )
+    
+    , transformed as (
+        select *
+        , unit_price * order_qty as gross_total_amount
+        , (1-unit_price_discount)* unit_price * order_qty as net_value
 
-select*
-from joined
+    )
+select *
+from transformed
