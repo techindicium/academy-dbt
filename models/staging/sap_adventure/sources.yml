@@ -61,3 +61,9 @@ sources:
               - not_null
       - name: salesperson
         description: Table with information seller for Adventureworks.
+        columns:
+          - name: id_sales_person
+            description: primarykey
+            tests:
+              - unique
+              - not_null
