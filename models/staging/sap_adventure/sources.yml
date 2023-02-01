@@ -68,7 +68,7 @@ sources:
               - unique
               - not_null
       
-      - name: specialofferproduct
+      - name: businessentityaddress
         description: completar
       
       - name: specialoffer

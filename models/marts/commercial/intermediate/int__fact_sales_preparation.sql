@@ -20,6 +20,7 @@ with
             , sales_detail.id_sales_order_detail
             , sales_detail.id_product
             , sales_header.id_customer
+            , sales_header.id_sales_person
             , sales_header.id_territory
             , sales_header.id_bill_to_address
             , sales_header.id_ship_to_address

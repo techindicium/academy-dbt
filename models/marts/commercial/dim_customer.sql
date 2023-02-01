@@ -37,6 +37,7 @@ with
     , joined_customer_name as (
         select
             joined_store_name.id_customer
+            , stg_person.id_business_entity
             , joined_store_name.id_person
             , joined_store_name.id_store
             , joined_store_name.id_territory
@@ -47,5 +48,39 @@ with
         left join stg_person on joined_store_name.id_person = stg_person.id_business_entity
     )
 
+    , int_location as (
+        select *
+        from {{ ref('int__location_joined') }}
+    )
+
+    , business_entity_adress as (
+        select
+            id_address
+            , id_business_entity
+        from {{ ref('stg_sap__business_entity_address') }}
+    )
+
+    , joined_location as (
+        select
+            joined_customer_name.id_customer
+            , joined_customer_name.id_business_entity
+            , joined_customer_name.id_person
+            , joined_customer_name.id_store
+            , joined_customer_name.id_territory
+            , joined_customer_name.store_name
+            , joined_customer_name.title
+            , joined_customer_name.full_name
+            , int_location.city
+            , int_location.state_name
+            , int_location.country_name
+            , int_location.state_province_code
+            , int_location.country_region_code
+        from joined_customer_name
+        left join business_entity_adress as bea
+            on joined_customer_name.id_business_entity = bea.id_business_entity
+        left join int_location
+            on bea.id_address = int_location.id_address
+    )
+
 select *
-from joined_customer_name
+from joined_location

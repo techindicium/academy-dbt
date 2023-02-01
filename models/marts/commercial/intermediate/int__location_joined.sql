@@ -3,12 +3,7 @@ with
         select *
         from {{ ref('stg_sap__address') }}
     )
-    
-    , stg_person as (
-        select *
-        from {{ ref('stg_sap__person') }}
-    )
-    
+
     , stg_state_province as (
         select *
         from {{ ref('stg_sap__state_province') }}
