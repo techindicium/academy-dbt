@@ -20,7 +20,7 @@ with
             , cast(accountnumber as string) as account_number        
             , cast(creditcardapprovalcode as string) as creditcar_dappoval_code
             , cast(subtotal as int) as sub_total
-            , cast(taxamt as int) as taxamt
+            , cast(taxamt as int) as tax_amount
             , cast(freight as int) as freight
             , cast(totaldue as int) as total_due
             , cast(comment as string) as comment

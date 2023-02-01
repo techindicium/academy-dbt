@@ -12,5 +12,6 @@ with
             , cast(left(cast(modifieddate as string), 10) as date) as modified_date
         from {{source('adw', 'salesorderdetail' )}}
     )
-select *
+
+select count(*)
 from source_sales_order_detail

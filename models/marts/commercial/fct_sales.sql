@@ -73,13 +73,13 @@ with
           , account_number
           , creditcar_dappoval_code
           , sub_total
-          , taxamt
+          , tax_amount
           , freight
           , total_due
           , comment
           , row_guid
           , modified_date
-        from {{ ref('stg_sap__sales_order_head') }}
+        from {{ ref('stg_sap__sales_order_header') }}
     )
     
     , joined_order_details as (
@@ -102,7 +102,7 @@ with
             , order_head.sub_total
             , order_head.purchase_order_number
             , order_head.revision_number
-            , order_head.taxamt
+            , order_head.tax_amount
             , order_head.freight
             , order_head.total_due
             , order_head.status
@@ -115,7 +115,6 @@ with
             , order_head.comment
             , order_head.row_guid
             , order_head.modified_date
-
         from order_head
         left join order_detail on order_head.id_sales_order = order_detail.id_sales_order
     ) 
@@ -148,7 +147,7 @@ with
             , joined_order_details.sub_total
             , joined_order_details.purchase_order_number
             , joined_order_details.revision_number
-            , joined_order_details.taxamt
+            , joined_order_details.tax_amount
             , joined_order_details.freight
             , joined_order_details.total_due
             , joined_order_details.status
@@ -214,7 +213,6 @@ with
             , credit_card.card_type
             , credit_card.expired_year
             , credit_card.expired_month
-            
         from joined_order_details
         left join territory on joined_order_details.id_territory = territory.id_territory
         left join person on joined_order_details.id_territory = person.id_territory
