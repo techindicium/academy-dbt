@@ -1,0 +1,155 @@
+version: 2
+
+#################################################
+################# STG_PEOPLE ####################
+#################################################
+models:
+    - name:  stg_people    
+      description: "Tabela staging de eventos do firebase. Particionada por dt_event_date."
+      config:
+        schema: staging
+        full_refresh: true
+        materialized: view
+      columns: 
+          - name: int_people_id
+            description: "description here"
+            tests:
+                - not_null
+                - unique
+          
+          - name: str_person_type
+            description: "description here"
+          
+          - name: bol_name_style
+            description: "description here"
+
+          - name: str_title
+            description: "description here"
+
+          - name: str_first_name
+            description: "description here"
+            tests:
+                - not_null
+
+          - name: str_middle_name
+            description: "description here"
+
+          - name: str_last_name
+            description: "description here"
+
+          - name: str_suffix
+            description: "description here"
+
+          - name: int_email_promotion
+            description: "description here"
+
+          - name: str_additional_contact_info
+            description: "description here"
+
+          - name: str_demographics
+            description: "description here"
+
+          - name: str_rowguid
+            description: "description here"
+
+          - name: dte_modified_date
+            description: "description here"
+
+#################################################
+############## STG_LOCATIONS ####################
+#################################################
+models:
+    - name:  stg_locations    
+      description: "Tabela staging de eventos do firebase. Particionada por dt_event_date."
+      config:
+        schema: staging
+        full_refresh: true
+        materialized: view
+      columns: 
+          - name: int_address_id
+            description: "description here"
+            tests:
+                - not_null
+                - unique
+
+          - name: str_address_line1
+            description: "description here"
+          
+          - name: str_address_line2
+            description: "description here"
+
+          - name: str_city
+            description: "description here"
+
+          - name: int_state_provice_id
+            description: "description here"
+            tests:
+                - not_null
+
+          - name: str_state_province_code
+            description: "description here"
+
+          - name: bol_is_only_state_province_flag
+            description: "description here"
+
+          - name: str_state_province_name
+            description: "description here"
+
+          - name: int_territory_id
+            description: "description here"
+            tests:
+                - not_null
+
+          - name: str_postal_code
+            description: "description here"
+            tests:
+                - not_null
+          
+          - name: str_spatial_location
+            description: "description here"
+
+          - name: str_contry_region_code
+            description: "description here"
+            tests:
+                - not_null
+          
+          - name: str_country_region_code
+            description: "description here"
+            tests:
+                - not_null
+          
+          - name: dte_country_region_modified_date
+            description: "description here"
+          
+          - name: dte_state_province_modified_date
+            description: "description here"
+
+          - name: dte_modified_date
+            description: "description here"
+
+#################################################
+############## STG_STORES ####################
+#################################################
+models:
+    - name:  stg_stores
+      description: "Tabela staging de eventos do firebase. Particionada por dt_event_date."
+      config:
+        schema: staging
+        full_refresh: true
+        materialized: view
+      columns: 
+          - name: int_store_id
+            description: "description here"
+          
+          - name: str_store_name
+            description: "description here"
+
+          - name: int_sales_people_id
+            description: "description here"
+
+          - name: str_demographics
+            description: "description here"
+
+          - name: dte_modified_date
+            description: "description here"
+          
