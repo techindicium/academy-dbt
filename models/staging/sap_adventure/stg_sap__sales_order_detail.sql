@@ -13,5 +13,5 @@ with
         from {{source('adw', 'salesorderdetail' )}}
     )
 
-select count(*)
+select *
 from source_sales_order_detail
