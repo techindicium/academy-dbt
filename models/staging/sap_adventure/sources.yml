@@ -67,3 +67,9 @@ sources:
             tests:
               - unique
               - not_null
+      
+      - name: businessentityaddress
+        description: completar
+      
+      - name: specialoffer
+        description: completar
