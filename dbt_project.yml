@@ -1,12 +1,12 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: "cea-aw-johann" # <-- Name of the project.
+name: "cea_aw_johann" # <-- Name of the project.
 version: "1.0.0"
 config-version: 2
 
 # This setting configures which "profile" dbt uses for this project.
-profile: "cea-aw-johann"
+profile: "cea_aw_johann"
 
 # These configurations specify where dbt should look for different types of files.
 # The `source-paths` config, for example, states that models in this project can be
@@ -30,12 +30,12 @@ clean-targets: # directories to be removed by `dbt clean`
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 models:
-  cea-aw-johann: # <-- Name of the project. If you renamed your project you have to change this as well
+  cea_aw_johann: # <-- Name of the project. If you renamed your project you have to change this as well
     # Applies to all files under models/example/
     example:
       +materialized: view
 
 seeds:
-  cea-aw-johann: # <-- Name of the project. If you renamed your project you have to change this as well
+  cea_aw_johann: # <-- Name of the project. If you renamed your project you have to change this as well
     sap_adventure_works:
       +schema: sap_adw
