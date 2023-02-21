@@ -1,0 +1,108 @@
+version: 2
+
+sources:
+  - name: sap_adw
+    description: Réplica do banco Postgres da adventure works contendo dados do SAP
+    schema: sap_adw
+    tables:
+      - name: product
+        description: Uma linha por produto. Inclui pedidor descontinuados.
+        columns:
+          - name: productid
+            description: Chave primária da tabela de produtos.
+            tests:
+              - unique
+              - not_null
+
+      - name: salesorderheader
+        description: Uma linha por pedido (venda).
+        columns:
+          - name: salesorderid
+            description: Chave primária da tabela de vendas.
+            tests:
+              - unique
+              - not_null
+
+          - name: customerid
+            description: Chave estrangeira para o id do cliente.
+            tests:
+              - relationships:
+                  to: ref('customer')
+                  field: customerid
+
+          - name: salespersonid
+            description: Chave estrangeira para o id do vendedor.
+            tests:
+              - relationships:
+                  to: ref('salesperson')
+                  field: businessentityid
+
+          - name: territoryid
+            description: Chave estrangeira para o id da região destinatária do pedido.
+            tests:
+              - relationships:
+                  to: ref('salesterritory')
+                  field: territoryid
+
+          - name: creditcardid
+            description: Chave estrangeira para o id do cartão de crédito.
+            tests:
+              - relationships:
+                  to: ref('creditcard')
+                  field: creditcardid
+
+      - name: salesreason
+        description: Categorias que descrevem o motivador da venda.
+        columns:
+          - name: salesreasonid
+            description: Chave primária da tabela
+            tests:
+              - unique
+              - not_null
+
+          - name: name
+            description: Motivador da venda
+            tests:
+              - accepted_values:
+                  values:
+                    [
+                      "Price",
+                      "Manufacturer",
+                      "Review",
+                      "Quality",
+                      "Other",
+                      "Magazine Advertisement",
+                      "Television  Advertisement",
+                      "Demo Event",
+                      "Sponsorship",
+                      "On Promotion",
+                    ]
+
+          - name: reasontype
+            description: Tipo de motivador.
+            tests:
+              - accepted_values:
+                  values: ["Other", "Marketing", "Promotion"]
+
+      - name: salesorderdetail
+        description: Cada linha detalha informações de produtos contidos nos pedidos.
+        columns:
+          - name: salesorderdetailid
+            description: Chave primária da tabela.
+            tests:
+              - unique
+              - not_null
+
+          - name: salesorderid
+            description: Chave estrangeira para o id do pedido.
+            tests:
+              - relationships:
+                  to: ref('salesorderheader')
+                  field: salesorderid
+
+          - name: productid
+            description: Chave estrangeira para o id do produto.
+            tests:
+              - relationships:
+                  to: ref('product')
+                  field: productid
