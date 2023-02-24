@@ -1,0 +1,39 @@
+version: 2
+
+sources:
+  - name: aw
+    description: Banco de dados do SAP AdventureWorks
+    schema: sap_adw
+    tables:
+      - name: address
+        description: Tabela que conecta os dados de endereço a SalesOrderHeader
+        columns:
+          - name: id_endereco
+            description: Chave primária da tabela
+            test:
+            - unique
+            - not_null
+          - name: id_estado
+            description: Chave estrangeira da tabela stateprovince
+
+      - name: stateprovince
+        description: Tabela com dados do estado
+        columns:
+          - name: id_estado
+            description: Chave primária da tabela
+            test:
+            - unique
+            - not_null
+          - name: codigo_pais
+            description: Chave estrangeira da tabela countryregion
+                
+      - name: countryregion
+        description: Tabela com dados do país
+        columns:
+          - name: codigo_pais
+            description: Chave primária da tabela
+            test:
+            - unique
+            - not_null
+          - name: nome_pais
+            description: Nome do país relativo ao codigo_pais
