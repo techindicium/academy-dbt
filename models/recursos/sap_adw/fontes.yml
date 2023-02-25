@@ -4,7 +4,8 @@ sources:
   - name: aw
     description: Banco de dados do SAP AdventureWorks
     schema: sap_adw
-    tables:
+    tables:      
+      # Tabelas que serão usadas na dimensão endereço
       - name: address
         description: Tabela que conecta os dados de endereço a SalesOrderHeader
         columns:
@@ -41,3 +42,16 @@ sources:
               - not_null
           - name: pais
             description: Nome do país relativo ao codigo_pais
+           
+      # Tabela que será usada na dimensão cartão de crédito
+      - name: creditcard
+        description: Tabela com dados do cartão de crédito
+        columns:
+          - name: id_cartao
+            description: Chave primária da tabela 
+            tests:
+              - unique
+              - not_null
+          - name: tipo_cartao
+            description: Tipo do cartão referente ao id_cartao
+          
