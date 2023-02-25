@@ -23,6 +23,11 @@ sources:
               - unique
               - not_null
 
+          - name: status
+            description: Número inteiro representando o status do pedido
+            tests:
+              - not_null
+
           - name: customerid
             description: Chave estrangeira para o id do cliente.
             tests:
@@ -50,6 +55,46 @@ sources:
               - relationships:
                   to: ref('creditcard')
                   field: creditcardid
+
+      - name: salesorderdetail
+        description: Cada linha detalha informações de produtos contidos nos pedidos.
+        columns:
+          - name: salesorderdetailid
+            description: Chave primária da tabela.
+            tests:
+              - unique
+              - not_null
+
+          - name: salesorderid
+            description: Chave estrangeira para o id do pedido.
+            tests:
+              - relationships:
+                  to: ref('salesorderheader')
+                  field: salesorderid
+
+          - name: productid
+            description: Chave estrangeira para o id do produto.
+            tests:
+              - relationships:
+                  to: ref('product')
+                  field: productid
+
+      - name: salesorderheadersalesreason
+        description: Uma linha por pedido. Esta tabela relaciona um pedido com um motivador da venda (salesreason).
+        columns:
+          - name: salesorderid
+            description: Chave estrangeira para o id do pedido.
+            tests:
+              - relationships:
+                  to: ref('salesorderheader')
+                  field: salesorderid
+
+          - name: salesreasonid
+            description: Chave estrangeira para o id do motivo da venda.
+            tests:
+              - relationships:
+                  to: ref('salesreason')
+                  field: salesreasonid
 
       - name: salesreason
         description: Categorias que descrevem o motivador da venda.
@@ -84,25 +129,71 @@ sources:
               - accepted_values:
                   values: ["Other", "Marketing", "Promotion"]
 
-      - name: salesorderdetail
-        description: Cada linha detalha informações de produtos contidos nos pedidos.
+      - name: customer
+        description: Uma linha por cliente.
         columns:
-          - name: salesorderdetailid
-            description: Chave primária da tabela.
+          - name: customerid
+            description: Chave primária da tabela de clientes.
             tests:
               - unique
               - not_null
 
-          - name: salesorderid
-            description: Chave estrangeira para o id do pedido.
+          - name: personid
+            description: Chave estrangeira para o id da pessoa.
             tests:
               - relationships:
-                  to: ref('salesorderheader')
-                  field: salesorderid
+                  to: ref('person')
+                  field: businessentityid
 
-          - name: productid
-            description: Chave estrangeira para o id do produto.
+      - name: creditcard
+        description: Uma linha por cartão de crédito.
+
+      - name: address
+        description: Uma linha por endereço.
+        columns:
+          - name: addressid
+            description: Chave primária da tabela de endereços..
+            tests:
+              - unique
+              - not_null
+
+          - name: stateprovinceid
+            description: Chave estrangeira para o id do estado (stateprovince).
             tests:
               - relationships:
-                  to: ref('product')
-                  field: productid
+                  to: ref('stateprovince')
+                  field: stateprovinceid
+
+          - name: addressline1
+            description: Primeira parte do endereço
+
+          - name: addressline2
+            description: Segunda parte do endereço
+
+          - name: city
+            description: Nome da cidade.
+
+      - name: stateprovince
+        description: Uma linha por estado.
+        columns:
+          - name: stateprovinceid
+            description: Chave primária da tabela de estados.
+            tests:
+              - unique
+              - not_null
+
+          - name: name
+            description: Nome do estado.
+
+          - name: territoryid
+            description: Chave estrangeira para o id do país (salesterritory)
+            tests:
+              - relationships:
+                  to: ref('salesterritory')
+                  field: territoryid
+
+      - name: person
+        description: Uma linha por pessoa.
+
+      - name: store
+        description: Uma linha por estabelecimento.
