@@ -10,9 +10,9 @@ sources:
         columns:
           - name: id_endereco
             description: Chave primária da tabela
-            test:
-            - unique
-            - not_null
+            tests:
+              - unique
+              - not_null
           - name: id_estado
             description: Chave estrangeira da tabela StateProvince
           - name: cidade
@@ -23,9 +23,9 @@ sources:
         columns:
           - name: id_estado
             description: Chave primária da tabela
-            test:
-            - unique
-            - not_null
+            tests:
+              - unique
+              - not_null
           - name: codigo_pais
             description: Chave estrangeira da tabela CountryRegion
           - name: estado
@@ -34,10 +34,10 @@ sources:
       - name: countryregion
         description: Tabela com dados do país
         columns:
-          - name: cod_pais
+          - name: codigo_pais
             description: Chave primária da tabela
-            test:
-            - unique
-            - not_null
+            tests:
+              - unique
+              - not_null
           - name: pais
             description: Nome do país relativo ao codigo_pais

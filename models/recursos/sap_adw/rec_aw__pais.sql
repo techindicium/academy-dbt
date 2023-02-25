@@ -1,7 +1,7 @@
 with
     source_countryregion as(
         select
-            countryregioncode as cod_pais
+            countryregioncode as codigo_pais
             , name as pais
             --, modifieddate
         from {{ source('aw', 'countryregion') }}

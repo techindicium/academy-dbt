@@ -20,11 +20,10 @@ with
             , address.cidade
             , stateprovince.id_estado
             , stateprovince.estado
-            , stateprovince.codigo_pais
-            , countryregion.cod_pais
+            , countryregion.codigo_pais
             , countryregion.pais
         from stateprovince
-        left join countryregion on stateprovince.codigo_pais = countryregion.cod_pais
+        left join countryregion on stateprovince.codigo_pais = countryregion.codigo_pais
         left join address on stateprovince.id_estado = address.id_estado
     )
 
