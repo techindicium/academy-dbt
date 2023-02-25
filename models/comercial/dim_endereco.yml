@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: dim_endereco
+    description: Dimensão com informação de endereço, estado e país
+    columns:
+      - name: sk_endereco
+        description: Chave primária da dim_endereco
+        tests:
+          - unique
+          - not_null
+      
+      - name: id_endereco
+        description: Chave primária da rec_aw__endereco
+
+      - name: cidade
+        description: Nome da cidade referente ao id_endereco na rec_aw__endereco
+
+      - name: id_estado
+        description: Chave primária da rec_aw__estado
+
+      - name: estado
+        description: Nome do estado referente ao id_estado na rec_aw__estado
+
+      - name: codigo_pais
+        description: Chave primária da rec_aw__pais
+
+      - name: pais
+        description: Nome do país referente ao codigo_pais na rec_aw__pais
