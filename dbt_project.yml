@@ -18,11 +18,11 @@ clean-targets:
 
 models:
   aw_data_driven:
-    staging:
+    recursos:
       sap_adw:
         +materialized: table
 
-    marts:
+    comercial:
       +materialized: table
 
 seeds:
