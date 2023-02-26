@@ -4,7 +4,7 @@ models:
   - name: dim_endereco
     description: Dimensão com informação de endereço, estado e país
     columns:
-      - name: sk_endereco
+      - name: pk_endereco
         description: Chave primária da dim_endereco
         tests:
           - unique
