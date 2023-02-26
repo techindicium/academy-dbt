@@ -1,12 +1,12 @@
 with
     source_stateprovince as(
         select
-            stateprovinceid as id_estado
+            cast(stateprovinceid as int) as id_estado
             --, territoryid
             --, stateprovincecode
-            , countryregioncode as codigo_pais
+            , cast(countryregioncode as string) as codigo_pais
             --, isonlystateprovinceflag
-            , name as estado
+            , cast(name as string) as estado
             --, rowguid
             --, modifieddate
         from {{ source('aw', 'stateprovince') }}
