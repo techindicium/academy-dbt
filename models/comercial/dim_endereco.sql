@@ -29,7 +29,7 @@ with
 
     , transformacoes as (
         select
-            row_number() over (order by id_endereco) as sk_endereco
+            row_number() over (order by id_endereco) as pk_endereco
             , *
         from uniao_tabelas
     )

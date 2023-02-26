@@ -1,11 +1,11 @@
 with
     source_address as(
         select
-            addressid as id_endereco
-            , stateprovinceid as id_estado
+            cast(addressid as int) as id_endereco
+            , cast(stateprovinceid as int) as id_estado
             --, addressline1
             --, addressline2
-            , city as cidade
+            , cast(city as string) cidade
             --, postalcode
             --, spatiallocation
             --, rowguid

@@ -6,38 +6,38 @@ sources:
     schema: sap_adw
     tables:
       - name: address
-        description: Tabela que conecta os dados de endereço a SalesOrderHeader
+        description: Tabela que conecta a ramificação de endereço a SalesOrderHeader
         columns:
-          - name: id_endereco
+          - name: addressid
             description: Chave primária da tabela
             tests:
               - unique
               - not_null
-          - name: id_estado
+          - name: stateprovinceid
             description: Chave estrangeira da tabela StateProvince
-          - name: cidade
+          - name: city
             description: Nome da cidade
 
       - name: stateprovince
         description: Tabela com dados do estado
         columns:
-          - name: id_estado
+          - name: stateprovinceid
             description: Chave primária da tabela
             tests:
               - unique
               - not_null
-          - name: codigo_pais
+          - name: countryregioncode
             description: Chave estrangeira da tabela CountryRegion
-          - name: estado
+          - name: name
             description: Nome do estado
                 
       - name: countryregion
         description: Tabela com dados do país
         columns:
-          - name: codigo_pais
+          - name: countryregioncode
             description: Chave primária da tabela
             tests:
               - unique
               - not_null
-          - name: pais
-            description: Nome do país relativo ao codigo_pais
+          - name: name
+            description: Nome do país relativo ao countryregioncode
