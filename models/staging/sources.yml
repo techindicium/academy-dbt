@@ -1,0 +1,98 @@
+version: 2
+
+sources:
+  - name: adv_work
+    description: Banco de dados réplica do SAP Adventure WORK
+    schema: sap_adw
+
+    #stages referentes a Person
+    tables:  
+      - name: address
+        columns:
+          - name: addressid
+            tests:
+              - unique
+              - not null
+
+      - name: countryregion
+        columns:
+          - name: countryregioncode
+            tests:
+              - unique
+              - not null
+
+      - name: person
+        columns:
+          - name: businessentityid
+            tests:
+              - unique
+              - not null
+
+      - name: stateprovince
+        columns:
+          - name: stateprovinceid
+            tests:
+              - unique
+              - not null
+      
+      #stages referentes a Sales
+      - name: creditcard
+        columns:
+          - name: creditcardid
+            tests:
+              - unique
+              - not null
+  
+      - name: customer
+        columns:
+          - name: customerid
+            tests:
+              - unique
+              - not null
+      
+      - name: salesorderdetail
+        columns:
+          - name: salesorderid
+            tests:
+              - unique
+              - not null
+
+      - name: salesorderheader
+        columns:
+          - name: salesorderid
+            tests:
+              - unique
+              - not null
+      
+      - name: salesorderheadersalesreason
+        columns:
+          - name: salesorderid
+            tests:
+              - unique
+              - not null
+      
+      - name: salesreason
+        columns:
+          - name: salesreasonid
+            tests:
+              - unique
+              - not null
+      
+      - name: store
+        columns:
+          - name: businessentityid
+            tests:
+              - unique
+              - not null
+
+      #stages referentes a Products
+      - name: product
+        columns:
+          - name: productid
+            tests:
+              - unique
+              - not null
+
+     
+     
+     
