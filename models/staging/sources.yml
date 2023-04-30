@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: adv_work
-    description: Banco de dados réplica do SAP Adventure WORK
+    description: Banco de dados do SAP Adventure WORK
     schema: sap_adw
 
     #stages referentes a Person
