@@ -2,7 +2,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'my_new_project' # <-- Name of the project.
+name: 'adventure_works' # <-- Name of the project.
 version: '1.0.0'
 config-version: 2
 
@@ -15,7 +15,7 @@ profile: 'default'
 model-paths: ["models"]
 analysis-paths: ["analyses"]
 test-paths: ["tests"]
-seed-paths: ["seeds"]
+seed-paths: ["seeds"] 
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
@@ -32,7 +32,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 models:
-  my_new_project: # <-- Name of the project. If you renamed your project you have to change this as well
+  adventure_works: # <-- Name of the project. If you renamed your project you have to change this as well
     
     # Applies to all files under models/example/
     example:
