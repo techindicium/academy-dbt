@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: erp 
+    schema: dbt_leonardovieiraev_sap_adventure_works
+    description: Fonte de dados de vendas do SAP Northwind
+    tables:
+      - name: department
+        columns:
+          - name: addressid
+            tests:
+              - unique
+              - not_null
