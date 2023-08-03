@@ -1,0 +1,47 @@
+version: 2
+
+sources:
+  - name: erp 
+    schema: dbt_leonardovieiraev_sap_adventure_works
+    description: Fonte de dados de vendas do SAP Adventure Works
+    
+    tables:
+      - name: salesorderheader
+        columns:
+          - name: salesorderid
+            tests:
+              - unique
+              - not_null
+      - name: salesorderdetail 
+        columns:
+          - name: salesorderdetailid
+            tests:
+              - unique
+              - not_null
+      - name: product 
+        columns:
+          - name: productid
+            tests:
+              - unique
+              - not_null
+      - name: salesorderheadersalesreason 
+        columns:
+          - name: salesorderid
+            tests:
+              - unique
+              - not_null
+      - name: salesreason 
+        columns:
+          - name: salesreasonid
+            tests:
+              - unique
+              - not_null
+      - name: customer 
+        columns:
+          - name: customerid
+            tests:
+              - unique
+              - not_null
+
+              	
+
