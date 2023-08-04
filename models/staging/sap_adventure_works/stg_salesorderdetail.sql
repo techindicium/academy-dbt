@@ -9,8 +9,7 @@ with
             ,cast(unitprice as decimal) as unit_price
             ,cast(unitpricediscount as decimal) as unit_price_discount  
             ,cast(carriertrackingnumber as STRING) as carrier_tracking_number       
-            ,cast(rowguid as STRING) as row_guid
-            ,cast(modifieddate as STRING) as modification_date          
+            ,cast(rowguid as STRING) as row_guid        
         from {{ source('erp', 'salesorderdetail')}}
         order by ID_sales_order
     )

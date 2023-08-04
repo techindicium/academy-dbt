@@ -19,13 +19,13 @@ with
             ,cast(onlineorderflag as BOOLEAN) as online_order_flag                      
             ,cast(purchaseordernumber as STRING) as purchase_order_numer                        
             ,cast(accountnumber as STRING) as account_number                                    
-            ,cast(creditcardapprovalcode    as STRING) as credit_card_approval_code                                     
+            ,cast(creditcardapprovalcode as STRING) as credit_card_approval_code                                     
             ,cast(comment as int) as comment                        
             ,cast(rowguid as STRING) as row_guid  
-            ,cast(orderdate as STRING) as order_date                        
-            ,cast(duedate as STRING) as due_date                
-            ,cast(shipdate as STRING) as ship_date
-            ,cast(modifieddate as STRING) as oh_modified_date
+            ,cast(orderdate as DATETIME) as order_date                        
+            ,cast(duedate as DATETIME) as due_date                
+            ,cast(shipdate as DATETIME) as ship_date
+            ,cast(modifieddate as DATETIME) as oh_modified_date
         from {{ source('erp', 'salesorderheader') }}
         order by ID_order
     )
