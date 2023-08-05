@@ -3,7 +3,7 @@ with
         select 
             cast(salesorderid as int) as ID_sales_order                     
             ,cast(salesorderdetailid as int) as ID_sales_order_detail
-            ,cast(productid as int) as ID_product   
+            ,cast(productid as int) as ID_orderproduct   
             ,cast(specialofferid as int) as ID_special_offer
             ,cast(orderqty as int) as order_quantity
             ,cast(unitprice as decimal) as unit_price

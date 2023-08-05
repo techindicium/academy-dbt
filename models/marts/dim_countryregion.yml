@@ -1,0 +1,10 @@
+version: 2
+models:
+  - name: dim_countryregion
+    description: Tabela de dimensão de países, estados e cidades da AdventureWorks.
+    columns:
+      - name: ID_Address
+        description: Chave primária da tabela dim_countryregion.
+        tests:
+          - unique
+          - not_null

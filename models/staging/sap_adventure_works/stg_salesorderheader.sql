@@ -2,7 +2,7 @@ with
     source_salesorderheader as (
         select 
             cast(salesorderid as int) as ID_order               
-            ,cast(customerid as int) as ID_customer
+            ,cast(customerid as int) as ID_customer_order
             ,cast(salespersonid as int) as ID_sales_person
             ,cast(territoryid as int) as ID_territory
             ,cast(billtoaddressid as int) as ID_bill_to_address

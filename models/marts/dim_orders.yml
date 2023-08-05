@@ -1,0 +1,10 @@
+version: 2
+models:
+  - name: dim_orders
+    description: Tabela de dimensão de pedidos da AdventureWorks.
+    columns:
+      - name: ID_order
+        description: Chave primária da tabela dim_orders.
+        tests:
+          - unique
+          - not_null
