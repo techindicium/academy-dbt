@@ -11,7 +11,8 @@ with
 
     joinedtables as (
         select
-            ID_order
+            cast((ID_order || '-' || ID_sales_order_detail) as string) as pk_orders
+            ,ID_order
             ,ID_sales_order_detail
             ,ID_orderproduct
             ,ID_ship_to_address

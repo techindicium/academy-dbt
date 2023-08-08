@@ -3,7 +3,7 @@ models:
   - name: dim_product
     description: Tabela de dimensão de produtos da AdventureWorks.
     columns:
-      - name: ID_order
+      - name: ID_Product
         description: Chave primária da tabela dim_product.
         tests:
           - unique

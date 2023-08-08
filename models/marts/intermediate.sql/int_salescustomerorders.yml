@@ -1,0 +1,10 @@
+version: 2
+models:
+  - name: int_salescustomerorders
+    description: Fact table of the AdvetureWorks erp.
+    columns:
+      - name: sales_sk
+        description: Primary Key of the fact_sales table
+        tests:
+          - unique
+          - not_null

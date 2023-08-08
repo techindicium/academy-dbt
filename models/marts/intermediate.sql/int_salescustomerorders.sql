@@ -1,7 +1,8 @@
 with 
     intermediate_orders as (
         select
-            ID_order					
+            pk_orders
+            ,ID_order					
             ,ID_sales_order_detail					
             ,ID_orderproduct		
             ,ID_ship_to_address
@@ -41,8 +42,7 @@ with
             ,ID_Person				
             ,ID_BusinessEntity				
             ,PersonTypoe				
-            ,FirtName				
-            ,LastName				
+            ,FirtName || ' ' || LastName as Customer_Name							
         from {{ ref('dim_customer') }}
     ),
 
@@ -56,12 +56,13 @@ with
             ,Product_Class
         from {{ ref('dim_product') }}
     ),
+
     intermediate_salesreason as (
         select
-            ID_SalesOrder					
+            ID_SalesOrder
+            ,ID_SalesOrderHeaderReason					
             ,ID_SalesReason					
-            ,ReasonName					
-            ,ReasonType											
+            ,ReasonName																
         from {{ ref('dim_salesreason') }}
     ), 
 
@@ -74,13 +75,10 @@ with
             ,ID_credit_card
             ,ID_Address
             ,ID_StateProvince
-            ,ID_SalesReason
             ,ID_Customer
-            ,FirtName
-            ,LastName
+            ,Customer_Name
             ,Product_Name
-            ,ReasonName
-            ,ReasonType
+            ,ReasonName			
             ,CardType
             ,order_date
             ,quantity
@@ -97,9 +95,15 @@ with
         left join intermediate_creditcard on intermediate_orders.ID_credit_card = intermediate_creditcard.ID_CreditCard
         left join intermediate_customer on intermediate_orders.ID_customer_order = intermediate_customer.ID_Customer
         left join intermediate_product on intermediate_orders.ID_orderproduct = intermediate_product.ID_Product
-        left join intermediate_salesreason on intermediate_orders.ID_order = intermediate_salesreason.ID_SalesOrder
+        left join intermediate_salesreason on intermediate_orders.ID_order = intermediate_salesreason.ID_SalesOrderHeaderReason
+    ),
+
+    sales_key as (
+        select
+            row_number() over (order by ID_order, ID_sales_order_detail) as ID_sales
+            , *
+        from joined_tables
     )
 
-
-select * 
-from joined_tables
+select *
+from sales_key

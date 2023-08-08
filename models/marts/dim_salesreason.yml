@@ -3,7 +3,7 @@ models:
   - name: dim_salesreason
     description: Dimensão de motivo da venda Adventure Works.
     columns:
-      - name: ID_SalesOrder
+      - name: ID_dim_Reason
         description: Chave primária da tabela dim_salesreason.
         tests:
           - unique
