@@ -1,0 +1,10 @@
+version: 2
+models:
+  - name: fct_sales
+    description: Fact table of the AdvetureWorks erp.
+    columns:
+      - name: ID_sales
+        description: Primary Key of the fact_sales table
+        tests:
+          - unique
+          - not_null

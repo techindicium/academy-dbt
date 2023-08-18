@@ -1,0 +1,10 @@
+version: 2
+models:
+  - name: dim_customer
+    description: Tabela de dimensão de clientes da AdventureWorks.
+    columns:
+      - name: ID_Customer
+        description: Chave primária da tabela dim_customer.
+        tests:
+          - unique
+          - not_null
