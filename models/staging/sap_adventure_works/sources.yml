@@ -70,5 +70,5 @@ sources:
           - name: countryregioncode
             tests:
               - unique
-              - not_null      
+              - not_null
 

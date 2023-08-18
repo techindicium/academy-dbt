@@ -3,5 +3,6 @@ with
         select * 
         from {{ ref('stg_creditcard') }}
     )
+    
 select * 
 from Credit_Card

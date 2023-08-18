@@ -1,8 +1,9 @@
 with 
     fact_sales as (
         select
-            ID_sales 
+            ID_sales
             ,ID_order
+            ,ID_SalesOrder
             ,ID_sales_order_detail
             ,ID_Product
             ,ID_ship_to_address
@@ -12,18 +13,23 @@ with
             ,ID_Customer
             ,Customer_Name
             ,Product_Name
-            ,ReasonName
+            ,ReasonName			
             ,CardType
             ,order_date
             ,quantity
             ,price
+            ,totalsaled
             ,totaldue
             ,subtotal
             ,taxamt
             ,freight
             ,City
             ,State_Name
-            ,Country_Name 
+            ,Country_Name
+            ,treaedtotalsaled
+            ,treatedquantity
+            ,treatedunitpricediscount
+            ,order_status
         from {{ ref('int_salescustomerorders') }}
     )
 

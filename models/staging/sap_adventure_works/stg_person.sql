@@ -15,5 +15,6 @@ with
             ,cast(rowguid as STRING) as Row_Guid					
         from {{ source('erp', 'person') }}
     )
+    
 select * 
 from souce_person

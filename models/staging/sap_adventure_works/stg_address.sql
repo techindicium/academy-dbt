@@ -10,5 +10,6 @@ with
             ,cast(spatiallocation as STRING) as Spatial_Location	
         from {{ source('erp', 'address') }}	
     )
+    
 select * 
 from source_address

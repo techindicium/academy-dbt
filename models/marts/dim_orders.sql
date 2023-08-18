@@ -21,22 +21,16 @@ with
             ,order_date
             ,order_quantity as quantity
             ,unit_price as price
+            ,unit_price_discount
             ,totaldue
             ,subtotal
             ,taxamt
             ,freight
+            ,order_status
         from salesorderheaders
         left join salesorderdetails on salesorderheaders.ID_order = salesorderdetails.ID_sales_order
         
     )
 
-    --CTE de teste do valor bruto vendido no ano de 2011  
-   /* totalinayear as ( 
-        select 
-            sum(quantity * price) as total_bruto 
-         from joinedtables
-         where joinedtables.order_date BETWEEN '2011-01-01' AND '2011-12-31'
-    )*/
-
-select * 
+select *
 from joinedtables

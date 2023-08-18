@@ -9,5 +9,6 @@ with
             ,cast(modifieddate as STRING) CModifiedDate
         from {{ source('erp', 'customer') }}
     )
+    
 select * 
 from source_customer

@@ -6,5 +6,6 @@ with
             ,cast(modifieddate as STRING) as SOHR_ModifiedDate
         from {{ source('erp', 'salesorderheadersalesreason') }}
     )
+    
 select * 
 from source_SalesOrderHeaderSalesReason

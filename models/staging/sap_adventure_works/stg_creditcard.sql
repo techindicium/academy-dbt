@@ -8,5 +8,6 @@ with
             ,cast(expyear as int) as Exp_Year	
         from {{ source('erp', 'creditcard') }}				
     )
+    
 select * 
 from source_creditcard

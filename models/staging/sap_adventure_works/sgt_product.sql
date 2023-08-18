@@ -17,5 +17,6 @@ with
             ,cast(class as STRING) as Product_Class
         from {{ source('erp', 'product') }}
     )
+    
 select * 
 from source_product
