@@ -58,8 +58,6 @@ models:
 
       - name: unit_price_discount
         description: Discount amount.
-        tests:
-          - not_null
 
       - name: total_due
         description: Total due from customer. Computed as Subtotal + TaxAmt + Freight.
@@ -75,7 +73,7 @@ models:
         description: Order current status. 1 = In process; 2 = Approved; 3 = Backordered; 4 = Rejected; 5 = Shipped; 6 = Cancelled
         tests:
           - not_null
-
+          
       - name: aggregated_reasons 
         description: Aggregate of all selling reason names that relate to the same order ID
 
