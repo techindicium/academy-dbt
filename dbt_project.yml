@@ -36,9 +36,15 @@ models:
     # Applies to all files under models/example/
     staging:
       +materialized: view
-      +schema: stg
-      sap_adventure_works:
-        +schema: stg_erp_adventureworks
+      +schema: staging
+    
+    marts:
+      +materialized: table
+      +schema: marts
+
+    intermediate:
+      +materialized: table
+      +schema: intermediate
 
 seeds:
   dbt_adw: # <-- Name of the project. If you renamed your project you have to change this as well
