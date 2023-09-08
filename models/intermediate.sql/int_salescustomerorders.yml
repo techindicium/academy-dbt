@@ -1,37 +1,36 @@
 version: 2
 models:
-  - name: dim_orders
-    description: AdventureWorks order dimension table.
+  - name: int_salescustomerorders
+    description: Fact table of the AdvetureWorks erp.
     columns:
-
-      - name: pk_orders
-        description: Primary key of the dim_orders table.
+      - name: ID_sales
+        description: Primary Key of the intemediate salescustomersorders table
         tests:
           - unique
           - not_null
 
-      - name: ID_order
+      - name: ID_order 
         description: Primary key. Foreign key to SalesOrderHeader.SalesOrderID.
         tests:
           - not_null
 
-      - name: ID_order_detail
+      - name: ID_order_detail 
         description: Primary key. One incremental unique number per product sold.
         tests:
           - unique
-          - not_null
+          - not_null   
 
-      - name: ID_product
+      - name: ID_product 
         description: Product sold to customer. Foreign key to Product.ProductID.
         tests:
           - not_null
 
-      - name: ID_ship_to_address
+      - name: ID_ship_to_address 
         description: Customer shipping address. Foreign key to Address.AddressID.
         tests:
           - not_null
 
-      - name: ID_credit_card
+      - name: ID_credit_card 
         description: Credit card identification number. Foreign key to CreditCard.CreditCardID.
 
       - name: ID_customer
@@ -39,35 +38,33 @@ models:
         tests:
           - not_null
 
-      - name: card_type
+      - name: card_type 
         description: Credit card name.
-        
-      - name: order_date
+
+      - name: order_date 
         description: Dates the sales order was created.
         tests:
           - not_null
 
-      - name: quantity
+      - name: Quantity
         description: Quantity ordered per product.
         tests:
           - not_null
 
-      - name: unit_price
+      - name: unit_price 
         description: Selling price of a single product.
         tests:
           - not_null
 
       - name: unit_price_discount
         description: Discount amount.
-        tests:
-          - not_null
 
       - name: total_due
         description: Total due from customer. Computed as Subtotal + TaxAmt + Freight.
         tests:
           - not_null
 
-      - name: freight
+      - name: Freight
         description: Shipping cost.
         tests:
           - not_null
@@ -76,3 +73,8 @@ models:
         description: Order current status. 1 = In process; 2 = Approved; 3 = Backordered; 4 = Rejected; 5 = Shipped; 6 = Cancelled
         tests:
           - not_null
+          
+      - name: aggregated_reasons 
+        description: Aggregate of all selling reason names that relate to the same order ID
+
+

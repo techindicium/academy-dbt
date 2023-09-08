@@ -1,13 +1,10 @@
 with 
     source_address as (
         select
-            cast(addressid as int) as ID_Address		
-            ,cast(stateprovinceid as int) as ID_StateProvince		
-            ,cast(addressline1 as STRING) as Address_Line1						
-            ,cast(addressline2 as STRING) as Address_Line2				
-            ,cast(city as STRING) as City							
-            ,cast(postalcode as STRING)	as Postal_Code				
-            ,cast(spatiallocation as STRING) as Spatial_Location	
+            cast(addressid as int) as ID_address		
+            ,cast(stateprovinceid as int) as ID_state_province		
+            ,cast(city as STRING) as city							
+            ,cast(postalcode as STRING)	as postal_code				
         from {{ source('erp', 'address') }}	
     )
     

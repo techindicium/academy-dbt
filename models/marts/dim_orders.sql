@@ -1,35 +1,57 @@
 with 
-    salesorderheaders as (
-        select * 
+    salesorderheader as (
+        select 
+            ID_order               
+            ,ID_customer
+            ,ID_territory
+            ,ID_ship_to_address
+            ,ID_credit_card
+            ,freight                        
+            ,total_due 
+            ,order_status                        
+            ,order_date  
         from {{ ref('stg_salesorderheader') }}
     ),
 
-    salesorderdetails as (
-        select * 
+    salesorderdetail as (
+        select 
+            ID_sales_order                     
+            ,ID_order_detail
+            ,ID_product   
+            ,quantity
+            ,unit_price
+            ,unit_price_discount   
         from {{ ref('stg_salesorderdetail') }}
+    ),
+
+    credit_card_stg as (
+        select
+            ID_credit_card as code_creditcard	
+            ,card_type	
+            ,card_number	
+        from {{ ref('stg_creditcard') }}
     ),
 
     joinedtables as (
         select
-            cast((ID_order || '-' || ID_sales_order_detail) as string) as pk_orders
+            cast((ID_order || '-' || ID_order_detail) as string) as pk_orders
             ,ID_order
-            ,ID_sales_order_detail
-            ,ID_orderproduct
+            ,ID_order_detail
+            ,ID_product
             ,ID_ship_to_address
             ,ID_credit_card
-            ,ID_customer_order
+            ,ID_customer
+            ,card_type
             ,order_date
-            ,order_quantity as quantity
-            ,unit_price as price
+            ,quantity
+            ,unit_price
             ,unit_price_discount
-            ,totaldue
-            ,subtotal
-            ,taxamt
+            ,total_due
             ,freight
             ,order_status
-        from salesorderheaders
-        left join salesorderdetails on salesorderheaders.ID_order = salesorderdetails.ID_sales_order
-        
+        from salesorderheader
+        left join salesorderdetail on salesorderheader.ID_order = salesorderdetail.ID_sales_order
+        left join credit_card_stg on salesorderheader.ID_credit_card = credit_card_stg.code_creditcard
     )
 
 select *

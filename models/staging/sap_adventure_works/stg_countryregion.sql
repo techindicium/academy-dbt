@@ -1,8 +1,8 @@
 with 
     source_ContryRegion as (
         select
-            cast(countryregioncode as STRING) as CODE_ContryRegion					
-            ,cast(name as STRING) as Country_Name		
+            cast(countryregioncode as STRING) as ID_country					
+            ,cast(name as STRING) as country_name		
         from {{ source('erp', 'countryregion') }}
     )
 

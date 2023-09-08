@@ -1,10 +1,32 @@
 version: 2
 models:
   - name: dim_product
-    description: Tabela de dimensão de produtos da AdventureWorks.
+    description: Products sold or used in the manfacturing of sold products.
     columns:
-      - name: ID_Product
-        description: Chave primária da tabela dim_product.
+
+      - name: ID_product
+        description: Primary key for Product records.
         tests:
           - unique
+          - not_null
+      
+      - name: product_name
+        description: Name of the product.
+        tests:
+          - not_null
+
+      - name: product_number
+        description: Unique product identification number.
+        tests:
+          - unique
+          - not_null
+
+      - name: standard_cost
+        description: Standard cost of the product.
+        tests:
+          - not_null
+
+      - name: list_price
+        description: Selling price.
+        tests:
           - not_null

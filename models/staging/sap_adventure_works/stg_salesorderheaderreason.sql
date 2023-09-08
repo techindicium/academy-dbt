@@ -1,9 +1,8 @@
 with 
     source_SalesOrderHeaderSalesReason as (
         select
-            cast(salesorderid as int) as ID_SalesOrder					
-            ,cast(salesreasonid as int)	as ID_SalesOrderHeaderReason				
-            ,cast(modifieddate as STRING) as SOHR_ModifiedDate
+            cast(salesorderid as int) as ID_order					
+            ,cast(salesreasonid as int)	as ID_sales_order_header_reason				
         from {{ source('erp', 'salesorderheadersalesreason') }}
     )
     

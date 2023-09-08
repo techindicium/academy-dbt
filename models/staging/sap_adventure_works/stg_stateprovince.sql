@@ -1,14 +1,13 @@
 with 
-    source_StateProvince  as (
+    source_stateprovince  as (
         select
-            cast(stateprovinceid as int) as ID_StateProvince
-            ,cast(territoryid as int) ID_Territory						
-            ,cast(stateprovincecode as  STRING) CODE_StateProvince			
-            ,cast(countryregioncode as STRING) CODE_ContryRegion	
-            ,cast(name as STRING) as State_Name		
-            ,cast(isonlystateprovinceflag as BOOLEAN) as Is_Only_State_Province_Flag					
+            cast(stateprovinceid as int) as ID_state_province
+            ,cast(territoryid as int) ID_territory						
+            ,cast(stateprovincecode as  STRING) code_state_province			
+            ,cast(countryregioncode as STRING) code_country_region	
+            ,cast(name as STRING) as state_name						
         from {{ source('erp', 'stateprovince' ) }}
      )
 
 select * 
-from  source_StateProvince
+from  source_stateprovince
