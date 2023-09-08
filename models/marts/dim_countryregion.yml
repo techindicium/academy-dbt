@@ -1,0 +1,51 @@
+version: 2
+models:
+  - name: dim_countryregion
+    description: AdventureWorks Countries, States, and Cities dimension table.
+    columns:
+
+      - name: ID_address
+        description: Primary key for Address records.
+        tests:
+          - unique
+          - not_null
+
+      - name: ID_state_province 
+        description: Unique identification number for the state or province. Foreign key to StateProvince table.
+        tests:
+          - not_null
+
+      - name: ID_territory 
+        description: ID of the territory in which the state or province is located. Foreign key to SalesTerritory.SalesTerritoryID.
+        tests:
+          - not_null
+
+      - name: ID_country 
+        description: ISO standard code for countries and regions.
+        tests:
+          - not_null
+
+      - name: City 
+        description: Name of the city.
+        tests:
+          - not_null
+
+      - name: postal_code 
+        description: Postal code for the street address.
+        tests:
+          - not_null
+
+      - name: code_state_province 
+        description: ISO standard state or province code.
+        tests:
+          - not_null
+
+      - name: state_name
+        description: State or province description.
+        tests:
+          - not_null
+              
+      - name: country_name
+        description: Country or region name.
+        tests:
+          - not_null
