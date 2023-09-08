@@ -1,29 +1,27 @@
 with 
-    dim_salesorderheadereason as (
+    salesorderheadereason as (
         select 
-            ID_SalesOrder					
-            ,ID_SalesOrderHeaderReason	
+            ID_order					
+            ,ID_sales_order_header_reason	
         from {{ ref('stg_salesorderheaderreason') }}
     ),
 
-    dim_salesorderdetailreason as (
+    salesorderdetailreason as (
         select 
-            ID_SalesReason						
-            ,ReasonName				
-            ,ReasonType					
+            ID_sales_reason						
+            ,reason_name								
         from {{ ref('stg_salesreason') }}
     ),
 
-    join_salesreason as (
+    joined_salesreason as (
         select
-            cast(ID_SalesOrder || ' ' || ID_SalesOrderHeaderReason as string) as ID_dim_Reason
-            ,ID_SalesOrder
-            ,ID_SalesOrderHeaderReason
-            ,ID_SalesReason
-            ,ReasonName
-        from dim_salesorderheadereason
-        left join dim_salesorderdetailreason on dim_salesorderheadereason.ID_SalesOrderHeaderReason = dim_salesorderdetailreason.ID_SalesReason
+            ID_order
+            ,string_agg(CAST(ID_sales_reason AS STRING), ', ') as aggregated_sales_reasonsID
+            ,string_agg(reason_name, ', ') as aggregated_reasons
+        from salesorderheadereason
+        left join salesorderdetailreason on salesorderheadereason.ID_sales_order_header_reason = salesorderdetailreason.ID_sales_reason
+        group by ID_order
     )
 
 select *
-from join_salesreason
+from joined_salesreason

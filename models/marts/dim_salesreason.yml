@@ -1,10 +1,17 @@
 version: 2
 models:
   - name: dim_salesreason
-    description: Dimensão de motivo da venda Adventure Works.
+    description: Dimension table that aggregates sales orders with sales reason codes and names.
     columns:
-      - name: ID_dim_Reason
+
+      - name: ID_order
         description: Chave primária da tabela dim_salesreason.
         tests:
           - unique
           - not_null
+      
+      - name: aggregated_sales_reasonsID
+        description: Aggregate of all sales reason IDs that relate to the same order ID
+
+      - name: aggregated_reasons
+        description: Aggregate of all selling reason names that relate to the same order ID

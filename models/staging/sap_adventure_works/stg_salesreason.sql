@@ -1,12 +1,10 @@
 with
-    source_SalesReason as (
+    source_salesreason as (
         select
-            cast(salesreasonid as int) as ID_SalesReason						
-            ,cast(name as STRING) as ReasonName				
-            ,cast(reasontype as STRING) as ReasonType					
-            ,cast(modifieddate as STRING) as SR_ModifiedDate	
+            cast(salesreasonid as int) as ID_sales_reason						
+            ,cast(name as STRING) as reason_name				
         from {{ source('erp', 'salesreason') }}		
     )
 
 select * 
-from source_SalesReason
+from source_salesreason
