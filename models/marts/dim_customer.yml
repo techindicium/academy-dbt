@@ -1,0 +1,33 @@
+version: 2
+models:
+  - name: dim_customer
+    description: AdventureWorks Customers and People dimension table.
+    columns:
+
+      - name: ID_customer
+        description: Primary key of dim_customer table.
+        tests:
+          - unique
+          - not_null
+      
+      - name: ID_person
+        description: Foreign key to Person.BusinessEntityID.
+        tests:
+          - unique
+
+      - name: ID_business_entity 
+        description: Primary key for Person records.
+        tests:
+          - unique
+
+      - name: ID_store 
+        description: Foreign key to Store.BusinessEntityID.
+
+      - name: ID_territory 
+        description: ID of the territory in which the customer is located. Foreign key to SalesTerritory.SalesTerritoryID.
+        tests:
+          - not_null
+
+      - name: customer_name 
+        description: Name of the customer.
+
