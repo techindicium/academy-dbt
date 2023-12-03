@@ -1,6 +1,6 @@
 with
     fonte_currencyrate as (
-        select
+        select *
             cast(currencyrateid as int) as currencyrateid
             , cast(currencyratedate as timestamp) as currencyratedate
             , cast(fromcurrencycode as string) as fromcurrencycode
