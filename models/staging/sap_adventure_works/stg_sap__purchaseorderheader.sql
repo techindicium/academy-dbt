@@ -9,9 +9,9 @@ with
             , cast(shipmethodid as int) as shipmethodid
             , cast(orderdate as timestamp) as orderdate
             , cast(shipdate as timestamp) as shipdate
-            , cast(subtotal as float) as subtotal
-            , cast(taxamt as float) as taxamt
-            , cast(freight as float) as freight
+            , cast(subtotal as decimal) as subtotal
+            , cast(taxamt as decimal) as taxamt
+            , cast(freight as decimal) as freight
             , cast(modifieddate as timestamp) as modifieddate
         from {{ source('sap_adventure_works', 'purchaseorderheader') }}
     )

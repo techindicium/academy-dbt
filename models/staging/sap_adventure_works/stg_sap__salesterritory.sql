@@ -4,9 +4,9 @@ with
             cast(territoryid as int) as territoryid
             , cast(name as string) as name
             , cast(countryregioncode as string) as countryregioncode
-            , cast(group as string) as group
-            , cast(salesytd as float) as salesytd
-            , cast(saleslastyear as float) as saleslastyear
+            , cast(salesterritory.group as string) as groupcolumn
+            , cast(salesytd as decimal) as salesytd
+            , cast(saleslastyear as decimal) as saleslastyear
             , cast(costytd as int) as costytd
             , cast(costlastyear as int) as costlastyear
             , cast(rowguid as string) as rowguid

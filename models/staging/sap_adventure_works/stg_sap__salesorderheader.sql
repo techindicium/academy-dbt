@@ -19,10 +19,10 @@ with
             , cast(creditcardid as int) as creditcardid
             , cast(creditcardapprovalcode as string) as creditcardapprovalcode
             , cast(currencyrateid as int) as currencyrateid
-            , cast(subtotal as float) as subtotal
-            , cast(taxamt as float) as taxamt
-            , cast(freight as float) as freight
-            , cast(totaldue as float) as totaldue
+            , cast(subtotal as decimal) as subtotal
+            , cast(taxamt as decimal) as taxamt
+            , cast(freight as decimal) as freight
+            , cast(totaldue as decimal) as totaldue
             --, cast(comment as ) as 
             , cast(rowguid as string) as rowguid
             , cast(modifieddate as timestamp) as modifieddate

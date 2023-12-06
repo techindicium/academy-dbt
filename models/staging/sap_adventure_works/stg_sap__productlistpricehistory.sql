@@ -4,7 +4,7 @@ with
             cast(productid as int) as productid
             , cast(startdate as timestamp) as startdate
             , cast(enddate as timestamp) as enddate
-            , cast(listprice as float) as listprice
+            , cast(listprice as decimal) as listprice
             , cast(modifieddate as timestamp) as modifieddate
         from {{ source('sap_adventure_works', 'productlistpricehistory') }}
     )

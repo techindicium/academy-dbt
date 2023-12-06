@@ -6,7 +6,7 @@ with
             , cast(duedate as timestamp) as duedate
             , cast(orderqty as int) as orderqty
             , cast(productid as int) as productid
-            , cast(unitprice as float) as unitprice
+            , cast(unitprice as decimal) as unitprice
             , cast(receivedqty as int) as receivedqty
             , cast(rejectedqty as int) as rejectedqty
             , cast(modifieddate as timestamp) as modifieddate

@@ -8,7 +8,7 @@ with
             , cast(transactiondate as timestamp) as transactiondate
             , cast(transactiontype as string) as transactiontype
             , cast(quantity as int) as quantity
-            , cast(actualcost as float) as actualcost
+            , cast(actualcost as decimal) as actualcost
             , cast(modifieddate as timestamp) as modifieddate
         from {{ source('sap_adventure_works', 'transactionhistory') }}
     )

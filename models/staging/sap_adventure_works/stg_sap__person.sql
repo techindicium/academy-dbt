@@ -1,6 +1,6 @@
 with
     fonte_person as (
-        select distinct additionalcontactinfo
+        select
             cast(businessentityid as int) as businessentityid
             , cast(persontype as string) as persontype
             , cast(namestyle as bool) as namestyle

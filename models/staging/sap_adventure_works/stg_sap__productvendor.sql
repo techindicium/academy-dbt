@@ -4,8 +4,8 @@ with
             cast(productid as int) as productid
             , cast(businessentityid as int) as businessentityid
             , cast(averageleadtime as int) as averageleadtime
-            , cast(standardprice as float) as standardprice
-            , cast(lastreceiptcost as float) as lastreceiptcost
+            , cast(standardprice as decimal) as standardprice
+            , cast(lastreceiptcost as decimal) as lastreceiptcost
             , cast(lastreceiptdate as timestamp) as lastreceiptdate
             , cast(minorderqty as int) as minorderqty
             , cast(maxorderqty as int) as maxorderqty

@@ -3,7 +3,7 @@ with
         select
             cast(specialofferid as int) as specialofferid
             , cast(description as string) as description
-            , cast(discountpct as float) as discountpct
+            , cast(discountpct as decimal) as discountpct
             , cast(type as string) as type
             , cast(category as string) as category
             , cast(startdate as timestamp) as startdate

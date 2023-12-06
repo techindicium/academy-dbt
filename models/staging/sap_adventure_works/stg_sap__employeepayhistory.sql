@@ -3,7 +3,7 @@ with
         select
             cast(businessentityid as int) as businessentityid
             , cast(ratechangedate as timestamp) as ratechangedate
-            , cast(rate as float) as rate
+            , cast(rate as decimal) as rate
             , cast(payfrequency as int) as payfrequency
             , cast(modifieddate as timestamp) as modifieddate
         from {{ source('sap_adventure_works', 'employeepayhistory') }}

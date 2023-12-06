@@ -1,9 +1,9 @@
 with
     fonte_emailaddress as (
-        select
+        select 
             cast(businessentityid as int) as businessentityid
             , cast(emailaddressid as int) as emailaddressid
-            , cast(emailaddress as string) as emailaddress
+            , cast(emailaddress.emailaddress as string) as emailaddresscolumn
             , cast(rowguid as string) as rowguid
             , cast(modifieddate as timestamp) as modifieddate
         from {{ source('sap_adventure_works', 'emailaddress') }}

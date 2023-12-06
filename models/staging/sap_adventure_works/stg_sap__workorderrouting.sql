@@ -9,9 +9,9 @@ with
             , cast(scheduledenddate as timestamp) as scheduledenddate
             , cast(actualstartdate as timestamp) as actualstartdate
             , cast(actualenddate as timestamp) as actualenddate
-            , cast(actualresourcehrs as float) as actualresourcehrs
-            , cast(plannedcost as float) as plannedcost
-            , cast(actualcost as float) as actualcost
+            , cast(actualresourcehrs as decimal) as actualresourcehrs
+            , cast(plannedcost as decimal) as plannedcost
+            , cast(actualcost as decimal) as actualcost
             , cast(modifieddate as timestamp) as modifieddate
         from {{ source('sap_adventure_works', 'workorderrouting') }}
     )
