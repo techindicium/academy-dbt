@@ -1,0 +1,138 @@
+version: 2
+
+models:
+  - name: Dim_Purchasing
+    description: Dimensão com infomação das compras?????
+    columns:
+      - name: sk_purchase
+      description: asaasa.
+      tests:
+        - unique
+        - not_null
+        
+      - name: businessentityid
+      description: asaasa.
+        
+      - name: accountnumber
+      description: asaasa.
+        
+      - name: name_vendor
+      description: asaasa.
+        
+      - name: creditrating
+      description: asaasa.
+        
+      - name: preferredvendorstatus
+      description: asaasa.
+        
+      - name: activeflag
+      description: 
+        
+      - name: purchasingwebserviceurl
+      description: 
+        
+      - name: modifieddate_vendor
+      description: 
+        
+      - name: purchaseorderid
+      description: 
+        
+      - name: purchaseorderdetailid
+      description: 
+        
+      - name: duedate
+      description: 
+        
+      - name: orderqty
+      description: 
+        
+      - name: productid
+      description: 
+        
+      - name: unitprice
+      description: 
+        
+      - name: receivedqty
+      description: 
+        
+      - name: rejectedqty
+      description: 
+        
+      - name: modifieddate_purchaseorderdetail
+      description: 
+        
+      - name: revisionnumber
+      description: 
+        
+      - name: status
+      description: 
+        
+      - name: employeeid
+      description: 
+        
+      - name: vendorid
+      description: 
+        
+      - name: shipmethodid
+      description: 
+        
+      - name: orderdate
+      description: 
+        
+      - name: shipdate
+      description: 
+        
+      - name: subtotal
+      description: 
+        
+      - name: taxamt
+      description: 
+        
+      - name: freight
+      description: 
+        
+      - name: modifieddate_purchaseorderheader
+      description: 
+        
+      - name: name_shipmethod
+      description: 
+        
+      - name: shipbase
+      description: 
+        
+      - name: shiprate
+      description: 
+        
+      - name: rowguid
+      description: 
+        
+      - name: modifieddate_shipmethod
+      description: 
+        
+      - name: averageleadtime
+      description: 
+        
+      - name: standardprice
+      description: 
+        
+      - name: lastreceiptcost
+      description: 
+        
+      - name: lastreceiptdate
+      description: 
+        
+      - name: minorderqty
+      description: 
+        
+      - name: maxorderqty
+      description: 
+        
+      - name: onorderqty
+      description: 
+        
+      - name: unitmeasurecode
+      description: 
+        
+      - name: modifieddate_pro
+      description: 
+        
