@@ -1,0 +1,16 @@
+
+sources:
+  - name: sap
+    schema: sap_adw
+    description: Fontes de dados do SAP da Adventure Works.
+    tables:
+      - name: customer
+        columns:
+          - name: customerid
+            tests:
+              - unique
+              - not_null
+          - name: personid
+            tests:
+              - unique
+              

@@ -1,0 +1,17 @@
+
+models:
+  - name: dim_clientes
+    description: Dimensão de clientes da Adventure Works.
+    columns:
+      - name: cliente_id
+        description: Chave primária da tabela clientes.
+        tests:
+          - unique
+          - not_null
+      
+      - name: pessoa_id
+        description: Chave secundária da tabela pessoas. Existem campos nulos.
+        tests:
+          - unique
+        
+          
