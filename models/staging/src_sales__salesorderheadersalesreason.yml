@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: sales
+    schema: adventure_works_raw
+    database: desafio-ae-410821
+    description: Contains objects related to customers, sales orders, and sales territories.
+    tables:
+      - name: sales_salesorderheadersalesreason
+        description: Cross-reference table mapping sales orders to sales reason codes.
+        columns:
+          - name: salesreasonid
+            description: Primary key. Foreign key to SalesReason.SalesReasonID.
+            tests:
+              - not_null
+
+          - name: salesorderid
+            description: Primary key. Foreign key to SalesOrderHeader.SalesOrderID.
+            tests:
+              - not_null
+ 

@@ -1,0 +1,34 @@
+version: 2
+
+sources:
+  - name: person
+    schema: adventure_works_raw
+    database: desafio-ae-410821
+    description: This is the Person Schema, containing all information from every person (employee, customer, supplier etc)
+    tables:
+      - name: person_person
+        description: Main table that aggregates all person information and connects to most auxiliary tables
+        columns:
+          - name: businessentityid
+            description: Primary key for Person records.
+            tests:
+              - unique
+              - not_null
+
+          - name: persontype
+            description: "Primary type of person: SC = Store Contact, IN = Individual (retail) customer, SP = Sales person, EM = Employee (non-sales), VC = Vendor contact, GC = General contact"
+            tests:
+              - accepted_values:
+                  values: ['SC', 'IN', 'SP', 'EM', 'VC', 'GC']
+
+          - name: namestyle
+            description: 0 = The data in FirstName and LastName are stored in western style (first name, last name) order.  1 = Eastern style (last name, first name) order.
+            tests:
+              - accepted_values:
+                  values: [0, 1]
+
+          - name: firstname
+            description: First name of the person
+          
+          - name: lastname
+            description: Last name of the person

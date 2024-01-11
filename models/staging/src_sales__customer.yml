@@ -1,0 +1,25 @@
+version: 2
+
+sources:
+  - name: sales
+    schema: adventure_works_raw
+    database: desafio-ae-410821
+    description: Contains objects related to customers, sales orders, and sales territories.
+    tables:
+      - name: sales_customer
+        description: Current customer information. Also see the Person and Store tables.
+        columns:
+          - name: customerid
+            description: Primary key.
+            tests:
+              - unique
+              - not_null
+
+          - name: personid
+            description: Foreign key to Person.BusinessEntityID
+
+          - name: storeid
+            description: Foreign key to Store.BusinessEntityID
+
+          - name: territoryid
+            description: ID of the territory in which the customer is located. Foreign key to SalesTerritory.SalesTerritoryID.
