@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: dim_reasons
+    columns:
+      - name: salesorderid
+        description: The natural key of the sale
+        tests:
+          - unique
+          - not_null
+
+      - name: reason_name_aggregated
+        description: reasons for the salesorderid. When there is more than one reason per id, reasons are aggregated in one row  
+        tests:
+          - not_null
