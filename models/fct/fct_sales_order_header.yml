@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: fct_order_header
+    columns:
+
+      - name: salesorderid
+        description: Primary key of the sale
+        tests:
+          - not_null
+      
+      - name: subtotal
+        description: Sales subtotal
+        tests:
+          - not_null
+
+      - name: taxamt
+        description: Taxes amount
+        tests:
+          - not_null
+
+      - name: freight
+        description: Cost of freight
+
+      - name: totaldue
+        description: Subtotal + Freight + taxes
+        tests:
+          - not_null 
+
+      - name: orderdate
+        description: Order Date
+        tests:
+          - not_null 

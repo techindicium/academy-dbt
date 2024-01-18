@@ -1,0 +1,52 @@
+version: 2
+
+models:
+  - name: fct_orders
+    columns:
+      - name: salesorderid
+        description: Primary key of the sale
+        tests:
+          - not_null
+      
+      - name: product_fk
+        description: Foreign key of the product
+        tests:
+          - not_null
+
+      - name: shiptoadress_fk
+        description: Foreign key of the shiptoadress
+        tests:
+          - not_null
+
+      - name: creditcard_fk
+        description: Foreign key of the creditcard
+
+      - name: reason_name_final
+        description: Reason attributed to the sale
+        tests:
+          - not_null 
+
+      - name: customer_fk
+        description: Foreign key of the customer
+        tests:
+          - not_null 
+
+      - name: unitprice
+        description: Unit price of the product 
+        tests:
+          - not_null
+
+      - name: orderqty
+        description: Quantity of the product 
+        tests:
+          - not_null
+
+      - name: orderdate
+        description: Sale's date
+        tests:
+          - not_null 
+
+      - name: order_status_name
+        description: Order's status
+        tests:
+          - not_null  
