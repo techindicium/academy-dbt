@@ -20,7 +20,8 @@ with sales_order_header as (
         sales_order_detail.productid,
         product.name_product 
     from sales_order_detail
-    left join product on sales_order_detail.productid = product.productid
+    left join product 
+        on sales_order_detail.productid = product.productid
 )
 
 select *
