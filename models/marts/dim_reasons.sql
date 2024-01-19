@@ -15,7 +15,8 @@ with stg_sales_order_header_sales_reason as (
         stg_sales_order_header_sales_reason.salesorderid,
         string_agg(stg_salesreason.reason_name, ', ') as reason_name_aggregated
     from stg_sales_order_header_sales_reason
-    left join stg_salesreason on stg_sales_order_header_sales_reason.salesreasonid = stg_salesreason.salesreasonid 
+    left join stg_salesreason 
+        on stg_sales_order_header_sales_reason.salesreasonid = stg_salesreason.salesreasonid 
     group by stg_sales_order_header_sales_reason.salesorderid
 )
 

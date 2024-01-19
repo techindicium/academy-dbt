@@ -30,8 +30,10 @@ with stg_customer as (
         , stg_store.storename
         , coalesce(stg_person.fullname, stg_store.storename) as customer_fullname
     from stg_customer
-    left join stg_person on stg_customer.personid = stg_person.businessentityid
-    left join stg_store on stg_customer.storeid = stg_store.storebusinessentityid
+    left join stg_person 
+        on stg_customer.personid = stg_person.businessentityid
+    left join stg_store 
+        on stg_customer.storeid = stg_store.storebusinessentityid
 )
 select *
 from customer_transformed

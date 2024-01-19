@@ -27,9 +27,12 @@ with stg_sales_order_header as (
         , stg_state.name_state
         , stg_country.country_name
     from stg_sales_order_header
-    left join stg_address on stg_sales_order_header.shiptoaddressid = stg_address.addressid
-    left join 	stg_state on stg_address.stateprovinceid = stg_state.stateprovinceid
-    left join stg_country on stg_state.countryregioncode = stg_country.countryregioncode 
+    left join stg_address 
+        on stg_sales_order_header.shiptoaddressid = stg_address.addressid
+    left join 	stg_state 
+        on stg_address.stateprovinceid = stg_state.stateprovinceid
+    left join stg_country 
+        on stg_state.countryregioncode = stg_country.countryregioncode 
 )
 
 select *
