@@ -1,0 +1,53 @@
+version: 2
+
+sources:
+  - name: raw-data
+    schema: dbt_bschaden
+    database: desafio-ae-410821
+    description: This is the raw data source containing the sales order detail information.
+    tables:
+      - name: salesorderdetail
+        description: Raw table containing sales order detail information.
+        columns:
+          - name: salesorderid
+            description: Identifier for the sales order.
+            tests:
+              - not_null
+
+          - name: specialofferid
+            description: Identifier for the special offer associated with the sales order detail.
+            tests:
+              - not_null
+
+          - name: salesorderdetailid
+            description: Primary key for the sales order detail records.
+            tests:
+              - unique
+              - not_null
+
+          - name: productid
+            description: Identifier for the product associated with the sales order detail.
+            tests:
+              - not_null
+
+          - name: rowguid
+            description: Unique identifier for the record.
+            tests:
+              - unique
+              - not_null
+
+          - name: orderqty
+            description: Quantity of the product ordered.
+            tests:
+              - not_null
+
+          - name: unitprice
+            description: Unit price of the product.
+            tests:
+              - not_null
+
+          - name: unitpricediscount
+            description: Discount applied to the unit price.
+
+          - name: modifieddate
+            description: Date and time the record was last updated.

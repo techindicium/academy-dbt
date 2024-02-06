@@ -1,0 +1,25 @@
+version: 2
+
+sources:
+  - name: raw-data
+    schema: dbt_bschaden
+    database: desafio-ae-410821
+    description: This is the raw data source containing the sales reason information.
+    tables:
+      - name: salesreason
+        description: Raw table containing sales reason information.
+        columns:
+          - name: salesreasonid
+            description: Primary key for sales reason records.
+            tests:
+              - unique
+              - not_null
+
+          - name: reason_name
+            description: Name of the sales reason.
+
+          - name: reasontype
+            description: Type of the sales reason.
+
+          - name: modifieddate
+            description: Date and time the record was last updated.

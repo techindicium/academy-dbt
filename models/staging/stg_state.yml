@@ -1,0 +1,42 @@
+version: 2
+
+sources:
+  - name: raw-data
+    schema: dbt_bschaden
+    database: desafio-ae-410821
+    description: This is the raw data source containing the state/province information.
+    tables:
+      - name: stateprovince
+        description: Raw table containing state/province information.
+        columns:
+          - name: stateprovinceid
+            description: Primary key for state/province records.
+            tests:
+              - unique
+              - not_null
+
+          - name: countryregioncode
+            description: Code identifying the country or region.
+            tests:
+              - not_null
+
+          - name: modifieddate
+            description: Date and time the record was last updated.
+
+          - name: rowguid
+            description: Unique identifier for the record.
+            tests:
+              - unique
+              - not_null
+
+          - name: name_state
+            description: Name of the state/province.
+
+          - name: territoryid
+            description: Identifier for the territory.
+
+          - name: isonlystateprovinceflag
+            description: Flag indicating if the entry is only for a state/province.
+
+          - name: stateprovincecode
+            description: Code for the state/province.

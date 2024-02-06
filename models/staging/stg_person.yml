@@ -1,0 +1,52 @@
+version: 2
+
+sources:
+  - name: raw-data
+    schema: dbt_bschaden
+    database: desafio-ae-410821
+    description: This is the raw data source containing person information.
+    tables:
+      - name: person
+        description: Raw table containing person information.
+        columns:
+          - name: businessentityid
+            description: Primary key for person records.
+            tests:
+              - unique
+              - not_null
+
+          - name: title
+            description: Title of the person (e.g., Mr., Mrs., Dr.).
+          
+          - name: firstname
+            description: First name of the person.
+
+          - name: middlename
+            description: Middle name of the person, if any.
+
+          - name: lastname
+            description: Last name of the person.
+
+          - name: persontype
+            description: Primary type of person.
+            tests:
+              - accepted_values:
+                  values: ['SC', 'IN', 'SP', 'EM', 'VC', 'GC']
+
+          - name: namestyle
+            description: Style of the person's name.
+
+          - name: suffix
+            description: Suffix of the person's name, if any.
+          
+          - name: modifieddate
+            description: Date and time the record was last updated.
+
+          - name: rowguid
+            description: Unique identifier for the record.
+            tests:
+              - unique
+              - not_null
+
+          - name: emailpromotion
+            description: Indicates whether the person is opted-in to receive promotional emails.

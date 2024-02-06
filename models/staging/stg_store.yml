@@ -1,0 +1,25 @@
+version: 2
+
+sources:
+  - name: raw-data
+    schema: dbt_bschaden
+    database: desafio-ae-410821
+    description: This is the raw data source containing the store information.
+    tables:
+      - name: store
+        description: Raw table containing store information.
+        columns:
+          - name: businessentityid
+            description: Primary key for store records.
+            tests:
+              - unique
+              - not_null
+
+          - name: storename
+            description: Name of the store.
+
+          - name: salespersonid
+            description: Identifier for the salesperson associated with the store.
+
+          - name: modifieddate
+            description: Date and time the record was last updated.

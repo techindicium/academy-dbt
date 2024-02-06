@@ -1,0 +1,31 @@
+version: 2
+
+sources:
+  - name: raw-data
+    schema: dbt_bschaden
+    database: desafio-ae-410821
+    description: This is the raw data source containing the credit card information.
+    tables:
+      - name: creditcard
+        description: Raw table containing credit card information.
+        columns:
+          - name: creditcardid
+            description: Primary key for credit card records.
+            tests:
+              - unique
+              - not_null
+
+          - name: cardnumber
+            description: Number of the credit card.
+
+          - name: cardtype
+            description: Type of credit card.
+
+          - name: modifieddate
+            description: Date and time the record was last updated.
+
+          - name: expmonth
+            description: Expiration month of the credit card.
+
+          - name: expyear
+            description: Expiration year of the credit card.

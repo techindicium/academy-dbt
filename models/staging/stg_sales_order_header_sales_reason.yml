@@ -1,0 +1,23 @@
+version: 2
+
+sources:
+  - name: raw-data
+    schema: dbt_bschaden
+    database: desafio-ae-410821
+    description: This is the raw data source containing sales order header and sales reason information.
+    tables:
+      - name: salesorderheadersalesreason
+        description: Raw table containing sales order header and sales reason information.
+        columns:
+          - name: salesorderid
+            description: Primary key for sales order records.
+            tests:
+              - not_null
+
+          - name: modifieddate
+            description: Date and time the record was last updated.
+
+          - name: salesreasonid
+            description: Identifier for the sales reason associated with the sales order.
+            tests:
+              - not_null

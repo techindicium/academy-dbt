@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: raw-data
+    schema: dbt_bschaden
+    database: desafio-ae-410821
+    description: This is the raw data source containing the country information.
+    tables:
+      - name: countryregion
+        description: Raw table containing country information.
+        columns:
+          - name: countryregioncode
+            description: Code for the country or region.
+            tests:
+              - unique
+              - not_null
+
+          - name: modifieddate
+            description: Date and time the record was last updated.
+
+          - name: country_name
+            description: Name of the country.
