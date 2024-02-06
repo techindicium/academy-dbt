@@ -1,0 +1,89 @@
+version: 2
+
+sources:
+  - name: raw-data
+    schema: dbt_bschaden
+    database: desafio-ae-410821
+    description: This is the raw data source containing the sales order header information.
+    tables:
+      - name: salesorderheader
+        description: Raw table containing sales order header information.
+        columns:
+          - name: salesorderid
+            description: Primary key for sales order records.
+            tests:
+              - unique
+              - not_null
+
+          - name: shipmethodid
+            description: Identifier for the shipping method used for the order.
+            tests:
+              - not_null
+
+          - name: billtoaddressid
+            description: Identifier for the billing address associated with the order.
+
+          - name: modifieddate
+            description: Date and time the record was last modified.
+
+          - name: rowguid
+            description: Unique identifier for the record.
+            tests:
+              - unique
+              - not_null
+
+          - name: taxamt
+            description: Tax amount for the order.
+
+          - name: shiptoaddressid
+            description: Identifier for the shipping address associated with the order.
+
+          - name: onlineorderflag
+            description: Flag indicating if the order was placed online.
+
+          - name: territoryid
+            description: Identifier for the territory associated with the order.
+
+          - name: order_status
+            description: Status of the order.
+
+          - name: orderdate
+            description: Date the order was placed.
+
+          - name: creditcardapprovalcode
+            description: Approval code for credit card transactions.
+
+          - name: subtotal
+            description: Subtotal amount for the order.
+
+          - name: creditcardid
+            description: Identifier for the credit card used for payment.
+
+          - name: currencyrateid
+            description: Identifier for the currency rate used for currency conversion.
+
+          - name: revisionnumber
+            description: Revision number for the order.
+
+          - name: freight
+            description: Freight charges for the order.
+
+          - name: duedate
+            description: Due date for payment of the order.
+
+          - name: totaldue
+            description: Total amount due for the order.
+
+          - name: customerid
+            description: Identifier for the customer associated with the order.
+            tests:
+              - not_null
+
+          - name: salespersonid
+            description: Identifier for the salesperson associated with the order.
+
+          - name: shipdate
+            description: Date the order was shipped.
+
+          - name: accountnumber
+            description: Account number associated with the order.

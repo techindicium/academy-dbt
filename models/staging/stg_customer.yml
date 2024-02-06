@@ -1,0 +1,25 @@
+version: 2
+
+sources:
+  - name: raw-data
+    schema: dbt_bschaden
+    database: desafio-ae-410821
+    description: This is the raw data source containing customer information.
+    tables:
+      - name: customer
+        description: Raw table containing customer information.
+        columns:
+          - name: customerid
+            description: Primary key for customer records.
+            tests:
+              - unique
+              - not_null
+
+          - name: personid
+            description: Identifier of the person associated with the customer.
+
+          - name: storeid
+            description: Identifier of the store associated with the customer.
+
+          - name: territoryid
+            description: Identifier of the territory associated with the customer.

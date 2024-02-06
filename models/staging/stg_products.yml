@@ -1,0 +1,76 @@
+version: 2
+
+sources:
+  - name: raw-data
+    schema: dbt_bschaden
+    database: desafio-ae-410821
+    description: This is the raw data source containing product information.
+    tables:
+      - name: product
+        description: Raw table containing product information.
+        columns:
+          - name: productid
+            description: Primary key for product records.
+            tests:
+              - unique
+              - not_null
+
+          - name: name_product
+            description: Name of the product.
+
+          - name: productnumber
+            description: Unique product identifier.
+
+          - name: rowguid
+            description: Unique identifier for the record.
+            tests:
+              - unique
+              - not_null
+
+          - name: productmodelid
+            description: Identifier for the product model.
+
+          - name: safetystocklevel
+            description: Minimum amount of stock that should be on hand.
+
+          - name: finishedgoodsflag
+            description: Flag indicating whether the product is a finished good.
+
+          - name: class
+            description: Classification of the product.
+
+          - name: makeflag
+            description: Flag indicating whether the product is manufactured internally.
+
+          - name: reorderpoint
+            description: Inventory level at which a new order should be placed.
+
+          - name: modifieddate
+            description: Date and time the record was last updated.
+
+          - name: weightunitmeasurecode
+            description: Code for the unit of measure for weight.
+
+          - name: standardcost
+            description: Standard cost of the product.
+
+          - name: productsubcategoryid
+            description: Identifier for the product subcategory.
+
+          - name: listprice
+            description: Price at which the product is listed for sale.
+
+          - name: daystomanufacture
+            description: Number of days required to manufacture the product.
+
+          - name: productline
+            description: Line of products to which the product belongs.
+
+          - name: color
+            description: Color of the product.
+
+          - name: sellstartdate
+            description: Date when the product was first available for sale.
+
+          - name: product_weight
+            description: Weight of the product.
