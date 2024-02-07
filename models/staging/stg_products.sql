@@ -22,5 +22,6 @@ with stg_products as (
         , weight as product_weight
     from {{ source('raw-data', 'product') }}
 )
+
 select *
 from stg_products

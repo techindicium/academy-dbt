@@ -8,5 +8,6 @@ with stg_creditcard as (
         , expyear
     from {{ source('raw-data', 'creditcard') }}
 )
+
 select *
 from stg_creditcard

@@ -13,5 +13,6 @@ with stg_person as (
         , emailpromotion
     from {{ source('raw-data', 'person') }}
 )
+
 select *
 from stg_person

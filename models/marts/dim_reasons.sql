@@ -1,4 +1,4 @@
--- CTE com dados da Razão de vendas
+-- cte com dados da razão de vendas
 
 with stg_sales_order_header_sales_reason as (
     select *
@@ -22,3 +22,4 @@ with stg_sales_order_header_sales_reason as (
 
 select * 
 from reasons_transformed
+

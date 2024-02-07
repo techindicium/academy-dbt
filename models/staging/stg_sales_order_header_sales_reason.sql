@@ -1,9 +1,12 @@
 with stg_sales_order_header_sales_reason as (
     select
-        CAST(salesorderid AS INT) as salesorderid
+        cast(salesorderid as int) as salesorderid
         , modifieddate
-        , CAST(salesreasonid AS INT) as salesreasonid
+        , cast(salesreasonid as int) as salesreasonid
     from {{ source('raw-data', 'salesorderheadersalesreason') }}
 )
+
 select *
 from stg_sales_order_header_sales_reason
+
+

@@ -29,7 +29,7 @@ with stg_sales_order_header as (
     from stg_sales_order_header
     left join stg_address 
         on stg_sales_order_header.shiptoaddressid = stg_address.addressid
-    left join 	stg_state 
+    left join   stg_state 
         on stg_address.stateprovinceid = stg_state.stateprovinceid
     left join stg_country 
         on stg_state.countryregioncode = stg_country.countryregioncode 
@@ -37,3 +37,4 @@ with stg_sales_order_header as (
 
 select *
 from locations_transformed
+

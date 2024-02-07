@@ -1,7 +1,7 @@
 with stg_address as (
     select
-        CAST(addressid as INT) as addressid
-        , CAST(stateprovinceid as INT) as stateprovinceid
+        cast(addressid as int) as addressid
+        , cast(stateprovinceid as int) as stateprovinceid
         , addressline1 
         , addressline2
         , city
@@ -13,3 +13,5 @@ with stg_address as (
 )
 select *
 from stg_address
+
+
