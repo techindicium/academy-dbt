@@ -1,6 +1,6 @@
 with stg_sales_reason as (
     select
-        salesreasonid
+        CAST(salesreasonid AS INT) as salesreasonid
         , name as reason_name
         , reasontype
         , modifieddate

@@ -1,9 +1,9 @@
 with stg_sales_order_detail as (
     select
-        salesorderid
-        , specialofferid
-        , salesorderdetailid
-        , productid
+        CAST(salesorderid AS INT) as salesorderid
+        , CAST(specialofferid AS INT) as specialofferid
+        , CAST(salesorderdetailid AS INT) as salesorderdetailid
+        , CAST(productid AS INT) as productid
         , rowguid
         , orderqty
         , unitprice

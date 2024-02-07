@@ -1,8 +1,8 @@
 with stg_address as (
     select
-        addressid
-        , stateprovinceid
-        , addressline1	
+        CAST(addressid as INT) as addressid
+        , CAST(stateprovinceid as INT) as stateprovinceid
+        , addressline1 
         , addressline2
         , city
         , modifieddate

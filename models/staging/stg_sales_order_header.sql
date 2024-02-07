@@ -1,26 +1,26 @@
 with stg_sales_order_header as (
     select
-        salesorderid
-        , shipmethodid
-        , billtoaddressid
+        CAST(salesorderid AS INT) as salesorderid
+        , CAST(shipmethodid AS INT) as shipmethodid
+        , CAST(billtoaddressid AS INT) as billtoaddressid
         , modifieddate
         , rowguid
         , taxamt
-        , shiptoaddressid
+        , CAST(shiptoaddressid AS INT) as shiptoaddressid
         , onlineorderflag
-        , territoryid
+        , CAST(territoryid AS INT) as territoryid
         , status as order_status
         , orderdate
         , creditcardapprovalcode
         , subtotal
-        , creditcardid
-        , currencyrateid
+        , CAST(creditcardid AS INT) as creditcardid
+        , CAST(currencyrateid AS INT) as currencyrateid
         , revisionnumber
         , freight
         , duedate
         , totaldue
-        , customerid
-        , salespersonid
+        , CAST(customerid AS INT) as customerid
+        , CAST(salespersonid AS INT) as salespersonid
         , shipdate
         , accountnumber
     from {{ source('raw-data', 'salesorderheader') }}

@@ -1,6 +1,6 @@
 with stg_products as (
     select
-        productid
+        CAST(productid AS INT) AS productid
         , name as name_product
         , productnumber
         , rowguid

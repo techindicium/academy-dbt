@@ -1,6 +1,6 @@
 with stg_creditcard as (
     select
-        creditcardid
+        cast(creditcardid as int) as creditcardid
         , cardnumber
         , cardtype
         , modifieddate

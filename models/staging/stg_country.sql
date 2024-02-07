@@ -1,9 +1,10 @@
-with stg_country as (
-    select
-        countryregioncode
+WITH stg_country AS (
+    SELECT
+        CAST(countryregioncode AS STRING) AS countryregioncode
         , modifieddate
-        , name as country_name
-    from {{ source('raw-data', 'countryregion') }}
+        , name AS country_name
+    FROM {{ source('raw-data', 'countryregion') }}
 )
-select *
-from stg_country
+SELECT *
+FROM stg_country
+ 

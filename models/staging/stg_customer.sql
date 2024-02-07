@@ -1,6 +1,6 @@
 with stg_customer as (
     select
-        customerid
+        CAST(customerid AS INT) as customerid
         , personid
         , storeid
         , territoryid

@@ -1,6 +1,6 @@
 with stg_person as (
     select
-        businessentityid
+        cast(businessentityid as int) as businessentityid
         , title
         , firstname
         , middlename
@@ -14,4 +14,4 @@ with stg_person as (
     from {{ source('raw-data', 'person') }}
 )
 select *
-from stg_person	
+from stg_person
