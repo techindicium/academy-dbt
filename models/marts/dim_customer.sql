@@ -37,3 +37,4 @@ with stg_customer as (
 )
 select *
 from customer_transformed
+

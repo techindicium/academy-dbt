@@ -1,51 +1,55 @@
-WITH customers AS (
-    SELECT
+with customers as (
+    select
         customer_sk
         , customerid
-    FROM {{ ref('dim_customer') }}
+    from {{ ref('dim_customer') }}
 )
 
-, products AS (
-    SELECT
+, products as (
+    select
         product_sk
         , productid
-    FROM {{ ref('dim_products') }}
+    from {{ ref('dim_products') }}
 )
 
-, locations AS (
-    SELECT
+, locations as (
+    select
         shiptoaddress_sk
         , shiptoaddressid
-    FROM {{ ref('dim_locations') }}
+    from {{ ref('dim_locations') }}
 )
 
-, creditcards AS (
-    SELECT
+, creditcards as (
+    select
         creditcard_key
         , creditcardid
-    FROM {{ ref('dim_creditcard') }}
+    from {{ ref('dim_creditcard') }}
 )
 
-, reasons AS (
-    SELECT
+, reasons as (
+    select
         salesorderid
         , reason_name_aggregated
-    FROM {{ ref('dim_reasons') }}
+    from {{ ref('dim_reasons') }}
 )
 
-, join_products_reason AS (
-    SELECT
+, join_products_reason as (
+    select
         sales_order_detail.salesorderid
-        , products.product_sk AS product_fk
+        , products.product_sk as product_fk
         , sales_order_detail.productid
         , sales_order_detail.orderqty
         , sales_order_detail.unitprice
         , sales_order_detail.unitpricediscount
-        , ifnull(reasons.reason_name_aggregated,'Not indicated') as reason_name_final
-    FROM {{ ref('stg_sales_order_detail') }} as sales_order_detail
-    LEFT JOIN products ON sales_order_detail.productid = products.productid
-    LEFT JOIN reasons ON sales_order_detail.salesorderid = reasons.salesorderid
+        , ifnull(reasons.reason_name_aggregated,'not indicated') as reason_name_final
+    from {{ ref('stg_sales_order_detail') }} as sales_order_detail
+    left join products 
+        on sales_order_detail.productid = products.productid
+    left join reasons 
+        on sales_order_detail.salesorderid = reasons.salesorderid
 )
 
-select * 
+select 
+    * 
 from join_products_reason
+

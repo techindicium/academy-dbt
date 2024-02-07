@@ -1,59 +1,63 @@
-WITH customers AS (
-    SELECT
+with customers as (
+    select
         customer_sk
         , customerid
-    FROM {{ ref('dim_customer') }}
+    from {{ ref('dim_customer') }}
 )
 
-, products AS (
-    SELECT
+, products as (
+    select
         product_sk
         , productid
-    FROM {{ ref('dim_products') }}
+    from {{ ref('dim_products') }}
 )
 
-, locations AS (
-    SELECT
+, locations as (
+    select
         shiptoaddress_sk
         , shiptoaddressid
-    FROM {{ ref('dim_locations') }}
+    from {{ ref('dim_locations') }}
 )
 
-, creditcards AS (
-    SELECT
+, creditcards as (
+    select
         creditcard_key
         , creditcardid
-    FROM {{ ref('dim_creditcard') }}
+    from {{ ref('dim_creditcard') }}
 )
 
-, reasons AS (
-    SELECT
+, reasons as (
+    select
         salesorderid
         , reason_name_aggregated
-    FROM {{ ref('dim_reasons') }}
+    from {{ ref('dim_reasons') }}
 )
 
-, join_orderh_locations_creditcard AS (
-    SELECT
+, join_orderh_locations_creditcard as (
+    select
         sales_order_header.salesorderid
-        , customers.customer_sk AS customer_fk
-        , creditcards.creditcard_key AS creditcard_fk
-        , locations.shiptoaddress_sk AS shiptoadress_fk
+        , customers.customer_sk as customer_fk
+        , creditcards.creditcard_key as creditcard_fk
+        , locations.shiptoaddress_sk as shiptoadress_fk
         , sales_order_header.orderdate
-        , CASE 
-            WHEN order_status = 1 THEN 'In_process'
-            WHEN order_status = 2 THEN 'Approved'
-            WHEN order_status = 3 THEN 'Backordered' 
-            WHEN order_status = 4 THEN 'Rejected' 
-            WHEN order_status = 5 THEN 'Shipped'
-            WHEN order_status = 6 THEN 'Cancelled' 
-            ELSE 'no_status'
+        , case 
+            when order_status = 1 then 'in_process'
+            when order_status = 2 then 'approved'
+            when order_status = 3 then 'backordered' 
+            when order_status = 4 then 'rejected' 
+            when order_status = 5 then 'shipped'
+            when order_status = 6 then 'cancelled' 
+            else 'no_status'
         end as order_status_name
-    FROM {{ ref('stg_sales_order_header') }} sales_order_header
-    LEFT JOIN customers ON sales_order_header.customerid = customers.customerid
-    LEFT JOIN creditcards ON sales_order_header.creditcardid = creditcards.creditcardid
-    LEFT JOIN locations ON sales_order_header.shiptoaddressid = locations.shiptoaddressid
+    from {{ ref('stg_sales_order_header') }} sales_order_header
+    left join customers 
+        on sales_order_header.customerid = customers.customerid
+    left join creditcards 
+        on sales_order_header.creditcardid = creditcards.creditcardid
+    left join locations 
+        on sales_order_header.shiptoaddressid = locations.shiptoaddressid
 )
 
-select *
+select 
+    *
 from join_orderh_locations_creditcard

@@ -26,3 +26,4 @@ with sales_order_header as (
 
 select *
 from products_transformed
+

@@ -1,6 +1,6 @@
 with stg_state as (
     select
-        stateprovinceid
+        cast(stateprovinceid as int) as stateprovinceid
         , countryregioncode
         , modifieddate
         , rowguid
@@ -10,5 +10,8 @@ with stg_state as (
         , stateprovincecode
     from {{ source('raw-data', 'stateprovince') }}
 )
+
 select *
 from stg_state
+
+

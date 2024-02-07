@@ -1,6 +1,6 @@
 with stg_products as (
     select
-        productid
+        CAST(productid AS INT) AS productid
         , name as name_product
         , productnumber
         , rowguid
@@ -22,5 +22,6 @@ with stg_products as (
         , weight as product_weight
     from {{ source('raw-data', 'product') }}
 )
+
 select *
 from stg_products
