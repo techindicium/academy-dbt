@@ -52,4 +52,3 @@ with customers as (
 select 
     * 
 from join_products_reason
-

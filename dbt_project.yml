@@ -47,6 +47,6 @@ models:
       +schema: marts
 
 seeds:
-  my_new_project: # <-- Name of the project. If you renamed your project you have to change this as well
+  my_new_project: 
     sap_adventure_works:
       +schema: sap_adw
