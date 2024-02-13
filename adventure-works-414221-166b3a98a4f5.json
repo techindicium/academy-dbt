@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "adventure-works-414221",
+  "private_key_id": "166b3a98a4f5fd1ad7dd0fbd1b6defd87e71fa0c",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDbtCfPHTtEKANU\n66TZWgE0a5FjVh5ixl3toVuaqIWfu7nCSoRW+ap3oOAPVPIUL9yXi1fAol8j0lad\nYmKDLVcV6xygHUXwHEW7tcf9bE12SP/WiuXfl0KC8VW/pjSRLqaJQdEbm2ZrC373\n8W4y9paYD8MlJx6Puf/RLUcmA/Haw008nI3PosM0R8g2of4j9EmOoXv21bZE+vPE\nr72VA1f/seud75+ijhjz72MGTY3FSOpnfGg+huqTkEYTWTbWfiDabGOnglWL6KIk\n+fASdu3JgCroxI9AISe+P25q+Jjbjb0IoDH2vwjVj7K+E7h9j1Y0iekxvii98T0z\nEkoxAmq7AgMBAAECggEAEDaQRYGDu840HhKHB3R+ku6+kOpsXZ+uk3hijobnLYLT\nUi+LlUY2upNIVaP60AXkLS7JmrFLfL+V8rwC8b6T0aNDE9x1KnimUL7jyPjdZ+A6\njmDmVoS5Z3kFz0R7AUfEXxat/BqQs/o/iW6V/PQjkt8pkyv63mJnKs7rlDZFpSi8\ny43fir91Mf6PjS5KYOEjlmADUnEBbx+PYHiLH5wv7W5AGQB9/Gj3XRL0+CMAyEvO\nKZCpiucaTdPwIry5BLjtWHvRyhWi1A6LqKGt996HIO/ANAsr0X2dyH9zSQwz3F2z\nY4TCYoPzK+sHYoJ5Vi+UmvW+6kA5D3Mdz7JOjvKaoQKBgQDvfsCJra9bLXiYK2ok\naomfF8QXsw2BvpL4vLNcdKe+GSZ6MJjAFrV1wr5yeVNbfupk37EvX3d8okISfwKf\nnth+/DMlUUUZ6vDZdXaS9IazpgqGehxPzSa2i57J/hy9zzSOUlieR2dfsBziXhVj\n97XyrgarGWMdIFMsrlisubuk8QKBgQDq2DzKI3NY/Mhdoe0CZyHFQZ45RuxLUIVi\nekWNxppVTWsyXvaf6KPFDJ2Jm/54dyRcEIc3M1SH6ycIgmtRZK2NCzUnOl/EbEw6\nAUs5LpF6TblM7YRZYuqr4FuYItnLzw7TNxMXJ7YS6ajFh9Lu+xBqHQjZ6VOVQgjZ\n5t+kfhQaawKBgQCks5iZllZ378d1brXqIVJPlLqISdzKE1Njt/HpbVhGhWlOssj5\noSRdvfXXJ9TJoXh0stlZaN/1WGjz62DUgRsGCU7rJP7OmiHUitFmsr9IILIwVR3P\nS5iKBW7IHveJGUxdbAgBob1XsvfKPUWcoCgCoud3F1hwGWDZ43ScJIcFIQKBgAlb\nMhjPjsHl2Em6sMmeuD62nYokpDdf7uB8hJbgabeqTPIFzIeUainolcIsv9emz4EH\ne4ucdOqxWK3DHGlyvGNZJfX5ImWd9u98q7WMgGlB/XbuI464HSdZ2exWvxyalDmg\nARe0ElHwkzPDdIjm4cGIhJjB7f2NUvLzesd/6mcfAoGAIaY8lcwh78l8MG9LKvKA\n+0K6ynrJyEqmEld5V1LFfTQCh1sgTNqilE0ECtyssEuEzMV8mSc5XiirkG3faMYq\nvXnhp2Xy+NOX8x12xvZHkspwoBOxBJYhzs69/xsUaCcWAvw7lt82VEGgFsggO1iJ\nwabqDyRG4OGRx2ZU8gCvVe8=\n-----END PRIVATE KEY-----\n",
+  "client_email": "adv-works@adventure-works-414221.iam.gserviceaccount.com",
+  "client_id": "117035107853622484966",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/adv-works%40adventure-works-414221.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
