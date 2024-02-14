@@ -2,9 +2,9 @@ WITH
     source_person AS (
         SELECT *
         FROM {{ source('sap_adw', 'person') }}
-    ),
+    )
 
-    formatted_person AS (
+    , formatted_person AS (
         SELECT
             businessentityid AS person_id
             , firstname || ' ' || COALESCE(middlename || ' ', '') || lastname AS person_name

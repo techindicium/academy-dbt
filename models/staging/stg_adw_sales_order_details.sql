@@ -2,9 +2,9 @@ WITH
     source_sales_order_detail AS (
         SELECT *
         FROM {{ source('sap_adw', 'salesorderdetail') }}
-    ),
+    )
 
-    formatted_sales_order_detail AS (
+    , formatted_sales_order_detail AS (
         SELECT 
             salesorderdetailid AS sales_order_detail_id
             , salesorderid AS sales_order_id

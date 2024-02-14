@@ -2,9 +2,9 @@ WITH
     source_product AS (
         SELECT *
         FROM {{ source('sap_adw', 'product') }}
-    ),
+    )
 
-    formatted_product AS (
+    , formatted_product AS (
         SELECT
            productid AS product_id
            , name AS product_name

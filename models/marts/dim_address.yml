@@ -1,0 +1,27 @@
+models:
+  - name: dim_address
+    description: "Tabela de dimensão de endereço que fornece informações detalhadas sobre cada endereço."
+    columns:
+      - name: address_sk
+        description: Chave substituta do endereço. Este é um identificador único gerado artificialmente usado para fins de data warehouse.
+        tests:
+          - not_null
+          - unique
+
+      - name: address_id
+        description: Chave natural do endereço conforme aparece no sistema de origem.
+        tests:
+          - not_null
+          - unique
+
+      - name: address_line
+        description: O endereço detalhado, incluindo qualquer número de apartamento ou unidade.
+
+      - name: city
+        description: O nome da cidade onde o endereço está localizado.
+
+      - name: province_name
+        description: O nome da província ou estado onde o endereço está localizado.
+
+      - name: country_name
+        description: O nome do país onde o endereço está localizado.
