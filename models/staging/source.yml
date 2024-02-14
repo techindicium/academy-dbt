@@ -1,0 +1,135 @@
+version: 2
+
+sources:
+  - name: sap_adw
+    description: "Dados de vendas da Adventure Works"
+    schema: sap_adw
+    tables:
+    - name: stateprovince
+      description: "Dados de estado e província, incluindo número de identificação único e nome do estado/província."
+      columns:
+        - name: stateprovinceid
+          description: "É uma chave primária da tabela de estado e província."
+          tests:
+            - unique
+            - not_null                    
+    - name: countryregion
+      description: "Códigos e nomes padrão ISO para países e regiões."
+      columns:
+        - name: countryregioncode
+          description: "É uma chave primária da tabela de país."
+          tests:
+            - unique
+            - not_null
+    - name: employee
+      description: "Informações do funcionário, como salário, departamento e cargo."
+      columns:
+        - name: businessentityid
+          description: "É uma chave primária da tabela de funcionários."
+          tests:
+            - unique
+            - not_null
+
+    - name: customer
+      description: "Dados detalhados do cliente, incluindo nomes, limite de crédito e referência do vendedor."
+      columns:
+        - name: customerid
+          description: "É uma chave estrangeira de BusinessEntityID como chave única da tabela de clientes."
+          tests:
+            - unique
+            - not_null
+    - name: address
+      description: "Dados de endereço de rua para clientes, funcionários e fornecedores."
+      columns:
+        - name: addressid
+          description: "É uma chave primária da tabela de endereços."    
+          tests:
+            - unique
+            - not_null
+    - name: person
+      description: "Pessoas envolvidas com a AdventureWorks: funcionários, contatos de clientes e contatos de fornecedores."
+      columns:
+        - name: businessentityid
+          description: "É uma chave estrangeira de BusinessEntityID como chave única da tabela de pessoas."
+          tests:
+            - unique
+            - not_null
+    - name: product
+      description: "Detalhes dos produtos vendidos ou usados na fabricação de produtos vendidos, incluindo nome, número do produto e cor."
+      columns:
+        - name: productid
+          description: "Chave primária para registros de Produto."
+          tests:
+            - unique
+            - not_null
+    - name: productcategory
+      description: "Dados de categorização de produtos de alto nível, incluindo número de identificação único e nome da categoria."
+      columns:
+        - name: productcategoryid
+          description: "Chave primária para registros de Categoria de Produto."
+          tests:
+            - unique
+            - not_null
+    - name: productsubcategory
+      description: "Subcategorias de produtos."
+      columns:
+        - name: productsubcategoryid	
+          description: "Chave primária para registros de subcategoria de produto."
+          tests:
+            - unique
+            - not_null
+    - name: creditcard
+      description: "Informações de cartão de crédito do cliente, incluindo número do cartão, tipo de cartão e data de validade."
+      columns:
+        - name: creditcardid	
+          description: "É uma chave primária da tabela de cartão de crédito."
+          tests:
+            - unique
+            - not_null
+    - name: salesorderheadersalesreason
+      description: "Tabela de referência cruzada que mapeia pedidos de venda para códigos de motivo de venda."
+      columns:
+        - name: salesorderid	
+          description: "É uma chave primária da tabela de pedidos de venda."
+          tests:
+            - not_null
+    - name: salesreason
+      description: "Tabela de pesquisa de motivos de compra do cliente, incluindo tipo de motivo e descrição do motivo."
+      columns:
+        - name: salesreasonid	
+          description: "É uma chave primária da tabela de motivo de venda."
+          tests:
+            - not_null
+    - name: salesorderdetail
+      description: "Dados detalhados sobre produtos individuais associados a um pedido de venda específico, incluindo quantidade do pedido e preço do produto."
+      columns:
+        - name: salesorderdetailid	
+          description: "É uma chave primária da tabela de detalhes do pedido de venda."
+          tests:
+            - unique
+            - not_null
+    - name: salesorderheader
+      description: "Dados gerais do pedido de venda, incluindo total devido, status e referência do cliente."
+      columns:
+        - name: salesorderid	
+          description: "É uma chave primária da tabela de pedidos de venda."
+          tests:
+            - unique
+            - not_null
+    - name: store
+      description: "Clientes (revendedores) dos produtos Adventure Works."
+      columns:
+        - name: businessentityid		
+          description: "É uma chave primária da tabela de loja."
+          tests:
+            - unique
+            - not_null
+
+    - name: salesperson
+      description: "Vendedores de produtos Adventure Works."
+      columns:
+        - name: businessentityid		
+          description: "É uma chave primária da tabela de vendedores."
+          tests:
+            - unique
+            - not_null
