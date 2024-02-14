@@ -6,8 +6,8 @@ WITH
 
     formatted_country_region AS (
         SELECT 
-            countryregioncode AS country_region_code,
-            name AS country_name
+            countryregioncode AS country_region_code
+            , name AS country_name
         FROM source_country_region
     )
 

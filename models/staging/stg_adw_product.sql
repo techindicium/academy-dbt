@@ -6,10 +6,10 @@ WITH
 
     formatted_product AS (
         SELECT
-           productid AS product_id,
-           name AS product_name,
-           productsubcategoryid AS product_subcategory_id,
-           safetystocklevel AS safety_stock_level
+           productid AS product_id
+           , name AS product_name
+           , productsubcategoryid AS product_subcategory_id
+           , safetystocklevel AS safety_stock_level
         FROM source_product
     )
 

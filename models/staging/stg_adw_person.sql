@@ -6,9 +6,9 @@ WITH
 
     formatted_person AS (
         SELECT
-            businessentityid AS person_id,
-            firstname || ' ' || COALESCE(middlename || ' ', '') || lastname AS person_name,
-            persontype AS person_type,
+            businessentityid AS person_id
+            , firstname || ' ' || COALESCE(middlename || ' ', '') || lastname AS person_name
+            , persontype AS person_type,
             CASE persontype
                 WHEN 'SC' THEN 'Store Contact'
                 WHEN 'VC' THEN 'Vendor Contact'

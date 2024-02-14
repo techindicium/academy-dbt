@@ -6,8 +6,8 @@ WITH
 
     formatted_product_category AS (
         SELECT 
-           productcategoryid AS product_category_id,
-           name AS product_category_name
+           productcategoryid AS product_category_id
+           , name AS product_category_name
         FROM source_product_category
     )
 
