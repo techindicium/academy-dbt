@@ -1,0 +1,42 @@
+version: 2
+
+models:
+
+  - name: dim_calendar
+    description: "Esta tabela contém informações sobre as datas em que ocorrem eventos para todas as fontes de dados."
+    columns:
+      - name: metric_date
+        description: "Registro de uma única data."
+        tests:
+          - not_null
+          - unique
+
+      - name: dayofmonth
+        description: "Dia do mês da data métrica."
+
+      - name: month
+        description: "Mês da data métrica."
+
+      - name: year
+        description: "Ano da data métrica."
+
+      - name: quarter
+        description: "Trimestre da data métrica."
+
+      - name: dayofyear
+        description: "Dia do ano da data métrica."
+
+      - name: isoweek
+        description: "Semana ISO da data métrica."
+
+      - name: week
+        description: "Semana do ano da data métrica."
+
+      - name: dayofweek
+        description: "Dia da semana da data métrica."
+
+      - name: fullmonth
+        description: "Nome completo do mês do ano."
+
+      - name: week_year
+        description: "Semana do ano e ano da data métrica, exemplo W48-2021."
