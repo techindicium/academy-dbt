@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: dim_products
+    description: "Tabela de dimensão de produtos que fornece informações detalhadas sobre cada produto."
+    columns:
+      - name: product_sk
+        description: "A chave substituta do produto. Este é um identificador exclusivo gerado artificialmente usado para fins de data warehouse."
+        tests:
+          - not_null
+          - unique
+
+      - name: product_id 
+        description: "A chave natural do produto. Este é o identificador original usado em sistemas de origem para identificar unicamente cada produto."
+        tests:
+          - not_null
+          - unique
+          
+      - name: product_name 
+        description: "O nome oficial do produto conforme apareceria em listagens de produtos, catálogos e outras publicações oficiais."
+
+      - name: product_category_name 
+        description: "O nome da categoria à qual o produto pertence. Esta classificação de alto nível agrupa produtos semelhantes para fins de análise e relatórios."
+
+      - name: product_subcategory_name
+        description: "Uma divisão adicional dentro de uma categoria de produto que fornece uma classificação mais específica do produto. Isso ajuda na classificação e análise mais detalhadas dos produtos."
+
+      - name: safety_stock_level
+        description: "O nível mínimo de inventário mantido para o produto para evitar falta de estoque. Este número auxilia na gestão e planejamento de estoque."
