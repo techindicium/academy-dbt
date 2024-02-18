@@ -2,3 +2,7 @@
 target/
 dbt_packages/
 logs/
+venv/
+.user.yml
+adventure-works-lighthouse-0e2de9442ee9.json
+adventure-works-lighthouse-0e2de9442ee9.json:Zone.Identifier

@@ -1,0 +1,23 @@
+version: 2
+
+sources:
+  - name: sales
+    schema: sap_adw
+    tables:
+      - name: salesorderheader
+        description: "General sales order information."
+      - name: salesorderheadersalesreason
+        description: "Cross-reference table mapping sales orders to sales reason codes."
+      - name: salesreason
+        description: "Lookup table of customer purchase reasons."   
+      - name: salesorderdetail
+        description: "Individual products associated with a specific sales order. See SalesOrderHeader."
+      - name: salesterritory
+        description: "Sales territory lookup table."
+      - name: creditcard
+        description: "Customer credit card information."
+      - name: personcreditcard
+        description: >
+          "Cross-reference table mapping people to their credit card information in the CreditCard table."
+      - name: customer
+        description: "Current customer information. Also see the Person and Store tables."

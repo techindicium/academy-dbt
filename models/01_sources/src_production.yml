@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: production
+    schema: sap_adw
+    tables:
+      - name: product
+        description: "Products sold or used in the manfacturing of sold products."
+      - name: productsubcategory
+        description: "Product subcategories. See ProductCategory table."
+      - name: productcategory
+        description: "High-level product categorization."
