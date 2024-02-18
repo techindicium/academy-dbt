@@ -1,0 +1,28 @@
+adventure_works_lighthouse:
+  outputs:
+    dev:
+      dataset: dbt_jeniffer
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: /home/jeniffersanches/lh_desafio_final/adventure_works_lighthouse/academy-dbt/adventure-works-lighthouse-0e2de9442ee9.json
+      location: US
+      method: service-account
+      priority: interactive
+      project: adventure-works-lighthouse
+      threads: 4
+      type: bigquery
+  target: dev
+default:
+  outputs:
+    dev:
+      dataset: dbt_jeniffer
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: /home/jeniffersanches/lh_desafio_final/adventure_works_lighthouse/academy-dbt/adventure-works-lighthouse-0e2de9442ee9.json
+      location: US
+      method: service-account
+      priority: interactive
+      project: adventure-works-lighthouse
+      threads: 4
+      type: bigquery
+  target: dev
