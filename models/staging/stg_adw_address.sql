@@ -1,17 +1,12 @@
 WITH 
-    source_address AS (
-        SELECT *
-        FROM {{ source('sap_adw', 'address') }}    
-    ),
-    
-    formatted_address as (
-        select 
+    formatted_address AS (
+        SELECT 
             addressid as address_id
-           , stateprovinceid as state_province_id
-           , addressline1 as address_line
-           , city
-        from source_address  
+            , stateprovinceid as state_province_id
+            , addressline1 as address_line
+            , city as city_address
+        FROM sap_adw.address
     )
 
-select *
-from formatted_address
+SELECT *
+FROM formatted_address

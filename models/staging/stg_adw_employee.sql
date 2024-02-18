@@ -1,9 +1,4 @@
 WITH 
-    source_employee AS (
-        SELECT *
-        FROM {{ source('sap_adw', 'employee') }}
-    ),
-
     formatted_employee AS (
         SELECT 
             businessentityid AS employee_id
@@ -14,7 +9,7 @@ WITH
             , vacationhours AS vacation_hours
             , sickleavehours AS sick_leave_hours
             , currentflag AS current_fla
-        FROM source_employee
+        FROM sap_adw.employee
     )
 
 SELECT *
