@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: person
+    schema: sap_adw
+    tables:
+      - name: person
+        description: >
+          "Human beings involved with AdventureWorks: employees, customer contacts, and vendor contacts."
+      - name: emailaddress
+        description: "Where to send a person email."
+      - name: address
+        description: "Street address information for customers, employees, and vendors."
+      - name: stateprovince
+        description: "State and province lookup table."
+      - name: countryregion
+        description: "Lookup table containing the ISO standard codes for countries and regions."
+        

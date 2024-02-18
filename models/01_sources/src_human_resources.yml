@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: human_resources
+    schema: sap_adw
+    tables:
+      - name: employee
+        description: "Employee information such as salary, department, and title."
