@@ -1,0 +1,13 @@
+desafio-final-lh-414719:
+  outputs:
+    dev:
+      dataset: dbt_julio
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      location: US
+      method: oauth
+      priority: interactive
+      project: desafio-final-lh-414719
+      threads: 2
+      type: bigquery
+  target: dev
