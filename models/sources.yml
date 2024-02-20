@@ -3,7 +3,7 @@ version: 2
 sources:
   - name: adw
     description: This is the adventureworks erp postgres database replica
-    schema: sap_adw
+    schema: dbt_julio
     tables:
       - name: salesorderheader
         description: one order per line
