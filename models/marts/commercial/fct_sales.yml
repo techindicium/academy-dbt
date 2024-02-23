@@ -1,0 +1,194 @@
+version: 2
+
+models:
+  - name: fct_sales
+    columns:
+      - name: id_sales_order
+        description: The primary key of the sale
+      
+      - name: id_sales_order_detail
+        description: The primary key of the sale detail
+          - unique  
+      
+      - name: id_territory
+        description: The foreign key of territory
+      
+      - name: id_ship_to_address
+        description: The foreign key of the shiptoadress
+      
+      - name: creditcard_fk
+        description: The foreign key of the creditcard. If no creditcard exists, it was assumed that purchase was made in cash.
+      
+      - name: unitprice
+        description: The unit price of the product 
+      
+      - name: orderqty
+        description: The quantity of the product 
+      
+      - name: reason_name_final
+        description: The reason attributed to the sale
+      
+      - name: orderdate
+        description: The date order to the sale
+      
+      - name: order_status_name
+        description: The order's status name. 
+      
+      - name: id_sales_reason
+        description: The foreign key of the sales reason.
+      
+      - name: id_currency_rate
+        description: The id the currency rate.
+      
+      - name: sub_total
+        description: The Total minus shipping
+      
+      - name: total_due
+        description: The total order.
+      
+      - name: tax_amount
+        description: The tax amount.
+      
+      - name: freight
+        description: The freight.
+      
+      - name: order_qty
+        description: The quantity of the product 
+      
+      - name: unit_price
+        description: The unit price of the product.
+      
+      - name: order_date
+        description: The date order.
+      
+      - name: discount_type
+        description: The discount of the type.
+      
+      - name: name_territory
+        description: The name of territory.
+      
+      - name: country_region_code
+        description: The code country region.
+      
+      - name: group_territory
+        description: The group territory
+      
+      - name: sale_sytd
+        description: The sales this year.
+      
+      - name: cost_ytd
+        description: The cost this year.
+      
+      - name: cost_last_year
+        description: The cost last year.
+      
+      - name: name_full_sales_person
+        description: The full name of the seller.
+      
+      - name: person_type
+        description: The person seller type.
+      
+      - name: birth_date
+        description: The date birth.
+      
+      - name: hire_date
+        description: The date birth.
+      
+      - name: salaried_flag
+        description: The flag salaried.
+      
+      - name: gender
+        description: The gender.
+      
+      - name: marital_status
+        description: The status marital.
+      
+      - name: reason_name
+        description: The name reason for seller
+      
+      - name: reason_type
+        description: The type reason for seller
+      
+      - name: id_product
+        description:  The foreign key of product.
+      
+      - name: id_product_model
+        description: The id product model
+      
+      - name: name_product
+        description: The name product.
+      
+      - name: number_product
+        description: The number product.
+      
+      - name: color
+        description: The color of the product.
+      
+      - name: standard_cost
+        description: The price cost standard.
+      
+      - name: price_list
+        description: The price list.
+      
+      - name: start_sell_date
+        description: The start sell
+      
+      - name: end_sell_date
+        description: The end sell.
+      
+      - name: id_product_sub_category
+        description:  The id sub category
+      
+      - name: id_product_category
+        description: the id category.
+      
+      - name: name_sub_category
+        description: The name sub category of the product
+      
+      - name: name_category
+        description: The name category of the product
+      
+      - name: id_customer
+        description: The name sub category od the product
+      
+      - name: id_person
+        description: The foreign key of person.
+      
+      - name: id_store
+        description: The foreign key of store.
+      
+      - name: store_name
+        description: The name store.
+      
+      - name: name_full_customer
+        description: The full customer.
+      
+      - name: id_credit_card
+        description: The foreign key of credit card..
+      
+      - name: card_type
+        description: The type credit card.
+      
+      - name: expired_year
+        description: The expired credit card year.
+      
+      - name: expired_month
+        description: The expired credit card month.
+      
+      - name: id_address
+        description: The foreign key at address.
+      
+      - name: city
+        description: The city of the client.
+      
+      - name: postal_code
+        description: The postal code.
+      
+      - name: id_state_province
+        description: The foreign key state province.
+      
+      - name: state_name
+        description: The state name.
+      
+      - name: state_province_code
+        description: The code of province.
