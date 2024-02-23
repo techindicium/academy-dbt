@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: dim_sales_territory
+    columns:
+      - name: id_territory
+        description: The primary key
+        tests:
+          - not_null   
+          - unique    
+      - name: name_territory
+        description: The name of territory
+      - name: country_region_code
+        description: The code country region 
+      - name: group_territory
+        description: The territory group
+      - name: sale_sytd
+        description: The sales from the beginning of the year
+      - name: cost_ytd
+        description: The cost from the beginning of the year
+      - name: cost_last_year
+        description: The cost last year
+      - name: row_guid
+        description: The row guid
+      - name: modified_date
+        description: The modified date
