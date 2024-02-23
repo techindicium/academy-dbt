@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: dim_customer
+    columns:
+      - name: id_customer
+        description: The id_customer the primary key
+        tests:
+          - not_null   
+          - unique
+      - name: id_person
+        description: The number of customer
+      - name: id_store
+        description: the ID store
+      - name: id_territory
+        description: the id territory
+      - name: store_name
+        description: The name of the store
+      - name: title
+        description: the title of the customer
+      - name: full_name
+        description: The full name customer

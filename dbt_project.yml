@@ -33,7 +33,7 @@ models:
   desafio_final_lh: # <-- Name of the project. If you renamed your project you have to change this as well
     staging:
       +materialized: table
-      
+      dataset: dbt_julio
 
 
 seeds:

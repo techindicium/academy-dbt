@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: dim_credit_card
+    columns:
+      - name: id_credit_card
+        description: The id_credit_card of the primary key
+        tests:
+          - not_null   
+          - unique
+      
+      - name: card_type
+        description: The credit card type for customer
+      
+      - name: expired_year
+        description: The credit card year expired for customer
+      
+      - name: expired_month
+        description: The credit card year expired for customer
+      
+      - name: card_number
+        description: The number credit card for customer
+      
+      - name: modified_date
+        description: The last modified date
