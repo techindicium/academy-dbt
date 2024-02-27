@@ -3,7 +3,7 @@ version: 2
 sources:
   - name: adw
     description: This is the adventureworks erp postgres database replica
-    schema: dbt_julio
+    schema: sap_adw
     tables:
       - name: salesorderheader
         description: one order per line
@@ -33,10 +33,10 @@ sources:
             description: Primary key for the credit card source.
               
       - name: productsubcategory
-        description: Table with information complementary customer for Adventureworks.
+        description: Table with information complementary product for Adventureworks.
 
       - name: productcategory
-        description: Table with information complementary customer for Adventureworks.
+        description: Table with information complementary product for Adventureworks.
 
       - name: customer
         description: Table with information the customer for Adventureworks.

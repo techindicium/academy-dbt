@@ -2,7 +2,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'desafio_final_lh' # <-- Name of the project.
+name: 'projeto_adw' # <-- Name of the project.
 version: '1.0.0'
 config-version: 2
 
@@ -30,12 +30,20 @@ clean-targets:         # directories to be removed by `dbt clean`
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 models:
-  desafio_final_lh: # <-- Name of the project. If you renamed your project you have to change this as well
-    staging:
+  projeto_adw: # <-- Name of the project. If you renamed your project you have to change this as well
+    # Applies to all files under models/example/
+    marts:
       +materialized: table
-      dataset: dbt_julio
+      +schema: marts
+      intermediate:
+        +materialized: table
+        +schema: intermediate
 
+    staging:
+      +materialized: view
+      +schema: staging   
 
 seeds:
-  desafio-final-lh: # <-- Name of the project. If you renamed your project you have to change this as well
-    dataset: dados_brutos
+  projeto_adw:
+    sap_adventure_works: # <-- Name of the project. If you renamed your project you have to change this as well
+      +schema: sap_adw
